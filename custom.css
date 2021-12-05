@@ -26,7 +26,7 @@ html[data-theme='dark'] {
   --ls-primary-text-color: rgba(190, 195, 200, 0.95);
   --ls-secondary-text-color: rgba(215, 215, 215, 0.7);
   --ls-title-text-color: var(--ls-primary-text-color);
-  --ls-link-text-color: #99cfcf;
+  --ls-link-text-color: #b2dbdb;
   --ls-link-text-hover-color: #fff;
   --ls-link-ref-text-color: var(--ls-link-text-color);
   --ls-link-ref-text-hover-color: var(--ls-link-text-hover-color);
