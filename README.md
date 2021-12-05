@@ -14,13 +14,13 @@ _The theme tries to achieve this through its styling decisions in spacing, typog
 _Providing an initially good overview of the note content section, without  the need to add manual line-breaks._
 
 ## Additional Notes
-The theme is designed to work with dev themes bullet threading. It even enhances it. For example, the "jumpiness" when activating a line gets fixed.
-It works on its own but, but to have the best workflow experience I suggest activating the bullet threading only theme over All Days `custom.css`.
+The theme is designed to work with Dev themes bullet threading (It even enhances it. For example, the "jumpiness" when activating a line gets fixed).
+It also works on its own but, but to have the best workflow experience I suggest activating the bullet threading only theme with All Days `custom.css`.
 
 ### To achieve this:
 - Add the theme as custom.css in your vaults/graphs logseq dir
 - Active developer mode in the settings
-- Install dev theme from the marketplace
+- Install "Dev theme" from the marketplace
 - Active the bullet threading only theme.
 
 
