@@ -1,0 +1,1 @@
+# logseq-allday-theme
