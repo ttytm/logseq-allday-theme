@@ -18,7 +18,7 @@ The theme is designed to work with dev themes bullet threading. It even enhances
 It works on its own but, but to have the best workflow experience I suggest activating the bullet threading only theme over All Days `custom.css`.
 
 ### To achieve this:
-- Add the theme as custom.css in your logseq directory.
+- Add the theme as custom.css in your vaults/graphs logseq dir
 - Active developer mode in the settings
 - Install dev theme from the marketplace
 - Active the bullet threading only theme.
