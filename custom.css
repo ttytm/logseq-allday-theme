@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --ls-font-family: 'Roboto', sans-serif;
+}
+
+.dark-theme,
+html[data-theme='dark'] {
+  --ls-main-content-max-width: 700px;
+  --ls-primary-background-color: #1f2428;
+  --ls-secondary-background-color: #24292e;
+  --ls-tertiary-background-color: #282e34;
+  --ls-quaternary-background-color: rgba(246, 246, 246, 0.04);
+  --ls-table-tr-even-background-color: rgba(246, 246, 246, 0.05);
+  --ls-active-primary-color: #8ec2c2;
+  --ls-active-secondary-color: #eeffff;
+  --ls-page-properties-background-color: var(--ls-secondary-background-color);
+  --ls-block-properties-background-color: var(--ls-secondary-background-color);
+  --ls-block-ref-link-text-color: var(--ls-link-text-color);
+  --ls-search-background-color: var(--ls-secondary-background-color);
+  --ls-border-color: var(--ls-primary-text-color);
+  --ls-secondary-border-color: var(--ls-primary-text-color);
+  --ls-guideline-color: rgba(246, 246, 246, 0.2);
+  --ls-menu-hover-color: var(--ls-secondary-background-color);
+  --ls-primary-text-color: rgba(190, 195, 200, 0.95);
+  --ls-secondary-text-color: rgba(215, 215, 215, 0.7);
+  --ls-title-text-color: var(--ls-primary-text-color);
+  --ls-link-text-color: #99cfcf;
+  --ls-link-text-hover-color: #fff;
+  --ls-link-ref-text-color: var(--ls-link-text-color);
+  --ls-link-ref-text-hover-color: var(--ls-link-text-hover-color);
+  --ls-tag-text-color: var(--ls-link-text-color);
+  --ls-tag-text-hover-color: var(--ls-link-text-hover-color);
+  --ls-slide-background-color: var(--ls-primary-background-color);
+  --ls-block-bullet-border-color: rgba(246, 246, 246, 0.25);
+  --ls-block-bullet-color: var(--ls-quaternary-background-color);
+  --ls-block-bullet-active-color: var(--ls-link-text-color);
+  --ls-block-bullet-threading-width: 1px;
+  --ls-bullet-closed-color: var(--ls-secondary-text-color);
+  --ls-block-highlight-color: rgba(246, 246, 246, 0.1);
+  --ls-selection-background-color: rgba(246, 246, 246, 0.1);
+  --ls-page-checkbox-color: rgba(246, 246, 246, 0.1);
+  --ls-page-checkbox-border-color: var(--ls-primary-text-color);
+  --ls-page-blockquote-color: var(--ls-primary-text-color);
+  --ls-page-blockquote-bg-color: var(--ls-secondary-background-color);
+  --ls-page-blockquote-border-color: var(--ls-border-color);
+  --ls-page-inline-code-color: var(--ls-primary-text-color);
+  --ls-page-inline-code-bg-color: rgba(246, 246, 246, 0.2);
+  --ls-page-title-size: 2rem;
+  --ls-scrollbar-foreground-color: rgba(246, 246, 246, 0.15);
+  --ls-scrollbar-background-color: var(--ls-primary-background-color);
+  --ls-scrollbar-thumb-hover-color: rgba(246, 246, 246, 0.3);
+  --ls-head-text-color: var(--ls-link-text-color);
+  --ls-icon-color: var(--ls-link-text-color);
+  --ls-search-icon-color: var(--ls-link-text-color);
+  --ls-a-chosen-bg: var(--ls-secondary-background-color);
+  --ls-right-sidebar-code-bg-color: var(--ls-page-inline-code-bg-color);
+  --color-level-1: var(--ls-secondary-background-color);
+  --color-level-2: var(--ls-tertiary-background-color);
+  --color-level-3: var(--ls-quaternary-background-color);
+}
+.white-theme,
+html[data-theme='light'] {
+  --ls-primary-background-color: #fafafa;
+  --ls-secondary-background-color: #ededed;
+  --ls-tertiary-background-color: rgba(237, 237, 237, .9);
+  --ls-page-title-size: 2rem;
+  --ls-title-text-color: var(--ls-primary-text-color);
+  --ls-page-properties-background-color: var(--ls-secondary-background-color);
+  --ls-block-properties-background-color: var(--ls-secondary-background-color);
+  --ls-block-ref-link-text-color: var(--ls-link-text-color);
+  --ls-search-background-color: var(--ls-secondary-background-color);
+  --ls-page-inline-code-color: var(--ls-primary-text-color);
+  --ls-page-inline-code-bg-color: rgba(0, 0, 0, 0.2);
+  --ls-page-title-size: 2rem;
+  --ls-scrollbar-foreground-color: rgba(0, 0, 0, 0.2);
+  --ls-scrollbar-background-color: var(--ls-primary-background-color);
+  --ls-scrollbar-thumb-hover-color: rgba(0, 0, 0, 0.3);
+  --ls-head-text-color: var(--ls-link-text-color);
+  --ls-icon-color: var(--ls-link-text-color);
+  --ls-search-icon-color: var(--ls-link-text-color);
+  --ls-a-chosen-bg: var(--ls-secondary-background-color);
+  --ls-selection-background-color: rgba(0, 0, 0, 0.1);
+
+}
+
+/* === Custom colors in buttons, hints etc ===  */
+
+/* submit button in calendar etc */
+.dark-theme .bg-indigo-600 {
+  background-color: var(--ls-link-text-color);
+  color: var(--ls-primary-background-color);
+}
+
+.dark-theme .hover\:bg-indigo-700:hover,
+.hover\:bg-indigo-500:hover {
+  background-color: var(--ls-primary-text-color);
+}
+
+/* pre */
+.hljs {
+  background: transparent;
+}
+
+/* hints */
+.dark-theme .Tooltip__label {
+  width: 11ch;
+  border: 1px solid var(--ls-primary-text-color);
+  background: var(--ls-secondary-background-color);
+}
+
+.dark-theme .Tooltip__label::after {
+  border-bottom-color: var(--ls-primary-text-color);
+}
+
+/* block references link count mark */
+a.open-block-ref-link {
+  color: var(--ls-primary-background-color);
+  background-color: var(--ls-link-text-color);
+}
+
+/* bold font */
+/* .dark-theme b,
+.dark-theme strong {
+  color: #fff;
+} */
+
+/* brackets in links */
+.page-reference .bracket {
+  opacity: 0.5;
+  color: var(--ls-link-text-color);
+}
+
+/* === Highlights === */
+mark {
+  background: rgba(246, 246, 246, 0.8);
+  color: var(--ls-primary-background-color);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+.white-theme mark {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* fix color page-reference when mark text */
+mark .page-ref, mark .page-reference .bracket {
+  color: var(--ls-primary-background-color);
+  font-weight: bold;
+}
+
+
+/* === Checkbox === */
+.form-checkbox {
+  background-color: var(--ls-primary-background-color);
+}
+.dark-theme .form-checkbox {
+  border: 1px solid rgba(246, 246, 246, 0.5);
+}
+.white-theme .form-checkbox {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme .form-checkbox:checked {
+  border-color: rgba(246, 246, 246, 0.5);
+  background-color: var(--ls-primary-background-color);
+}
+
+.white-theme .form-checkbox:checked {
+  border-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--ls-link-text-color);
+}
+
+.dark-theme .form-checkbox:focus {
+  border-color: rgba(246, 246, 246, 0.5);
+}
+
+.dark-theme .form-checkbox:checked:focus {
+  background-color: inherit;
+  border-color: rgba(246, 246, 246, 0.5);
+}
+
+.form-checkbox:hover {
+  transform: scale(1.2);
+}
+
+/* === Marker for Task Status === */
+.marker-switch {
+  font-size: 0.75rem;
+  margin-right: 6px;
+  margin-left: 2px;
+  border-radius: 0;
+  font-weight: 500;
+  display: inline-block;
+  text-align: center;
+  height: 16px;
+  opacity: 1;
+  padding: 0.1rem 0.25rem 0.1rem 0.25rem;
+  border: 1px solid;
+  line-height: 1;
+  cursor: pointer;
+}
+.dark-theme .marker-switch {
+  color: rgba(246, 246, 246, 0.5);
+}
+.white-theme .marker-switch {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* === Filters === */
+.filters button:focus {
+  outline: none;
+}
+
+/* === External Links === */
+a.external-link {
+  border-bottom: 0px;
+}
+a.external-link:after {
+  background-color: var(--ls-link-text-color);
+  bottom: -2px;
+  content: '';
+  display: inline-block;
+  height: 14px;
+  left: -1px;
+  margin: 0 1px 0 5px;
+  mask-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGDSURBVHgBtZaNcYMwDIUfGzgbqBuUDcwkaTdoJ4AN0gmaTNJu0GyQdILSCUjRIa6yMT+x4d29O7CNPmMLmQzryYhZ39hIDChbX1vflPn+2JqwoigA8t20fsEKogCslrZ6C6iG/UhAo/qLwBhCpCzc2T+OjNu1PquxB0TqpIK8e33k3Rdw3zJKnyqIVe2VtF1UW4b/PW0QuawaaDyYH5iBVyQCSQA2ALvJPRRQT8QgUdUEjPWs+r6QqHIGlsPdv/1UMIuuNJ3Fh4UwI8+WcAvAZQxEcJNCm2ZgOYZVpodRCPaAYblqxP0MK4wv42sA9oGJzPRLEQez8oDBfILwhHl1eAuOcL/RgZ48mF+uqhnY3dI1b781zHgBl8AKuSZEiOCe1KF2P/V1UiQBa6+Ps7OBu4w2FQi4308RmJDWCePH02K9qSCcQLuRcTncZbaIFKH7HPRe8ptmYp4A/0bUCO93lDhgg2U/RqPlag3o4toYK0JXmvoM1fW0QuIhmmEezvoVJ+sPourrpWEel2gAAAAASUVORK5CYII=');
+  -webkit-mask-box-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGDSURBVHgBtZaNcYMwDIUfGzgbqBuUDcwkaTdoJ4AN0gmaTNJu0GyQdILSCUjRIa6yMT+x4d29O7CNPmMLmQzryYhZ39hIDChbX1vflPn+2JqwoigA8t20fsEKogCslrZ6C6iG/UhAo/qLwBhCpCzc2T+OjNu1PquxB0TqpIK8e33k3Rdw3zJKnyqIVe2VtF1UW4b/PW0QuawaaDyYH5iBVyQCSQA2ALvJPRRQT8QgUdUEjPWs+r6QqHIGlsPdv/1UMIuuNJ3Fh4UwI8+WcAvAZQxEcJNCm2ZgOYZVpodRCPaAYblqxP0MK4wv42sA9oGJzPRLEQez8oDBfILwhHl1eAuOcL/RgZ48mF+uqhnY3dI1b781zHgBl8AKuSZEiOCe1KF2P/V1UiQBa6+Ps7OBu4w2FQi4308RmJDWCePH02K9qSCcQLuRcTncZbaIFKH7HPRe8ptmYp4A/0bUCO93lDhgg2U/RqPlag3o4toYK0JXmvoM1fW0QuIhmmEezvoVJ+sPourrpWEel2gAAAAASUVORK5CYII=');
+  mask-position: center;
+  -webkit-mask-box-position: center;
+  mask-repeat: no-repeat;
+  -webkit-mask-box-repeat: no-repeat;
+  mask-size: 14px 14px;
+  -webkit-mask-box-size: 14px 14px;
+  object-fit: cover;
+  position: relative;
+  transition: 0.3s;
+  width: 14px;
+}
+
+a.external-link:hover:after {
+  background-color: var(--ls-link-text-hover-color);
+}
+
+/* === Tags ===  */
+a.tag[data-ref] {
+  color: var(--ls-primary-background-color);
+  background: var(--ls-link-text-color);
+  border-radius: 0.5rem 0rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  line-height: 0.75rem;
+  padding: 0.2rem 0.3rem;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+a.tag[data-ref]:hover {
+  opacity: 1;
+  background-color: var(--ls-link-text-hover-color);
+  border-radius: 0rem 0.5rem;
+}
+
+/* === Inline code === */
+:not(pre) > code {
+  padding: 2px 5px !important;
+}
+
+ /* === Code Calc result position fix === */
+.extensions__code-calc {
+    top: 11px;
+    padding: 0 0.75em;
+}
+
+/* === CodeMirror === */
+.CodeMirror {
+  font-family: 'Fira Code', monospace;
+  line-height: 1.2;
+  background: var(--ls-secondary-background-color);
+}
+
+.CodeMirror-hscrollbar {
+  cursor: default;
+}
+
+.cm-s-solarized.cm-s-dark, .cm-s-solarized.cm-s-white {
+    color: var(--ls-primary-text-color);
+    background-color: var(--ls-primary-background-color);
+    border: 7px solid var(--ls-secondary-background-color);
+    text-shadow: none;
+}
+.CodeMirror-gutters {
+  background-color: #f7f7f7;
+}
+.cm-s-solarized.cm-s-dark .CodeMirror-gutters {
+    background-color: rgba(40, 42, 51, .5);
+}
+
+.CodeMirror-linenumber {
+    color: var(--ls-primary-text-color);
+    opacity: .5;
+    text-shadow: none;
+}
+
+.cm-s-solarized.cm-s-dark .CodeMirror-linenumber {
+    color: var(--ls-primary-text-color);
+    opacity: .5;
+    text-shadow: none;
+}
+
+.extensions__code-lang {
+  background: var(--ls-secondary-background-color);
+}
+
+.cm-s-solarized.cm-s-dark div.CodeMirror-selected {
+    background: var(--ls-selection-background-color);
+}
+.cm-s-solarized.cm-s-light div.CodeMirror-selected {
+    background: var(--ls-selection-background-color);
+}
+
+.CodeMirror-selected {
+    background: var(--ls-selection-background-color);
+}
+.CodeMirror-focused .CodeMirror-selected {
+    background: var(--ls-selection-background-color);
+}
+
+.editor-inner :is(.h1,.h2), .ls-block :is(h1,h2) {
+  margin: .5em 0;
+}
+
+
+#pdf-layout-container[data-theme=dark] {
+  background-color: var(--ls-quaternary-background-color);
+}
+#pdf-layout-container[data-theme=dark] .textLayer {
+  background-color: var(--ls-tertiary-background-color);
+}
+
+.block-body ul>li {
+  margin: 0.5em 0;
+}
+.block-body ul>li:first-child {
+  margin-top: 0;
+}
+.block-body ul>li:last-child {
+  margin-bottom: 0;
+}
+.ls-block {
+  padding: .25em 0;
+}
+.ls-block[haschild="true"] {
+  padding-top: .5em !important;
+}
+#lazy-blocks > div > .ls-block {
+  padding: .75em 0;
+}
+#lazy-blocks > div > .ls-block:first-child {
+  margin-top: -.5em;
+}
+.ls-block div.items-center {
+  height: 24px !important;
+}
+.ls-block .ls-block > div > div.items-center::before {
+  bottom: 52%;
+  margin-top: -20px;
+  top: 0px;
+}
+.ls-block .block-children .ls-block::before {
+  top: -1rem;
+}
+
+#lazy-blocks > div .ls-block[haschild=true] > div > .block-content-wrapper::before {
+ top: 2em;
+}
+.ls-block > .items-baseline{
+  align-items: center !important;
+}
