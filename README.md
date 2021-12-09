@@ -5,7 +5,7 @@ _Inspired to work with elegance and style._
 Concentrating on providing the best workflow experiences: High readability and a look that won't exhaust the eyes. <br /> 
 The theme tries to accomplish this through styling decisions in typography, colors and spacing.
 
-It provides an initially good overview of the note content section, without  the need to add manual line-breaks.
+It provides an initially good overview of the note content section, without  the need for additional manual line-breaks.
 
 ## Preview
 
