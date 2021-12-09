@@ -478,7 +478,7 @@ a.tag[data-ref]:hover {
   .ls-block[haschild="true"]
   > div
   > .block-content-wrapper::before {
-  top: 0.75em !important;
+  top: 0.65em !important;
 }
 .block-children .ls-block[haschild="true"] div .block-content-wrapper::before {
   top: 0 !important;
