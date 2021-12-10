@@ -441,7 +441,7 @@ a.tag[data-ref]:hover {
 .ls-block :is(h3) {
   position: relative;
   top: -.25em;
-  margin: .5em 0 -.25em;
+  margin: .25em 0 -.25em;
 }
 .editor-inner .uniline-block:is(.h1, .h2),
 .ls-block :is(h1, h2) #pdf-layout-container[data-theme="dark"] {
@@ -466,9 +466,9 @@ a.tag[data-ref]:hover {
 .ls-block[haschild="true"] {
   padding-top: 0.5em !important;
 }
-.block-children .ls-block[haschild="true"]:first-child {
+/* .block-children > .ls-block[haschild="true"]:first-child {
   padding-top: 0 !important;
-}
+} */
 #lazy-blocks > div > .ls-block {
   padding: 0.75em 0 !important;
 }
