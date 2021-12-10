@@ -431,8 +431,11 @@ a.tag[data-ref]:hover {
 .editor-inner :is(.h1, .h2),
 .ls-block :is(h1, h2) {
   margin: 0 0 0.5em !important;
+}
+.editor-inner :is(.h2),
+.ls-block :is(h2) {
   position: relative;
-  top: -.25em;
+  top: -.15em;
 }
 .editor-inner :is(.h3),
 .ls-block :is(h3) {
@@ -489,8 +492,8 @@ a.tag[data-ref]:hover {
   .ls-block[haschild="true"]
   > div
   > .block-content-wrapper::before {
-  top: 0.9em !important;
-}
+  top: 1em !important;
+} 
 .block-children .ls-block[haschild="true"] div .block-content-wrapper::before {
   top: 0 !important;
 }
