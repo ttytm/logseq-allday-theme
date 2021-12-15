@@ -1,0 +1,18 @@
+{
+  "logseq": {
+    "themes": [
+      {
+        "name": "logseq-allday-theme",
+        "url": "./custom.css",
+        "description": "High readability and a look that won't exhaust the eyes.",
+        "mode": "light"
+      },
+      {
+        "name": "logseq-allday-theme",
+        "url": "./custom.css",
+        "description": "High readability and a look that won't exhaust the eyes.",
+        "mode": "dark"
+      }
+    ]
+  }
+}
