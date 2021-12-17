@@ -1,0 +1,16 @@
+{
+  "name": "logseq-allday-theme",
+  "author": "@tobealive",
+  "version": "0.1",
+  "description": "A paper like Logseq theme",
+  "logseq": {
+    "themes": [
+      {
+        "name": "logseq-allday-theme",
+        "url": "./custom.css",
+        "description": "High readability and a look that won't exhaust the eyes."
+      }
+    ],
+    "id": "logseq-allday-theme"
+  }
+}
