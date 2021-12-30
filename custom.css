@@ -11,8 +11,8 @@ html[data-theme="dark"] {
   --ls-primary-background-color: #1f2428;
   --ls-secondary-background-color: #24292e;
   --ls-tertiary-background-color: #282e34;
-  --ls-quaternary-background-color: rgba(246, 246, 246, 0.04);
-  --ls-table-tr-even-background-color: rgba(246, 246, 246, 0.05);
+  --ls-quaternary-background-color: rgba(246, 246, 246, 0.05);
+  --ls-table-tr-even-background-color: rgba(246, 246, 246, 0.065);
   --ls-active-primary-color: #8ec2c2;
   --ls-active-secondary-color: #eeffff;
   --ls-page-properties-background-color: var(--ls-secondary-background-color);
@@ -90,7 +90,16 @@ html[data-theme="light"] {
 }
 
 .block-children {
-  border-left-width: var(--ls-block-bullet-threading-width);
+  /* border-left-width: var(--ls-block-bullet-threading-width); */
+  margin-left: -2px;
+}
+.block-children-left-border {
+  position: relative;
+  z-index: 2;
+  background-color: var(--ls-quaternary-background-color);
+}
+.block-children-left-border:hover {
+  background-color: var(--ls-block-bullet-border-color);
 }
 
 .block-content-wrapper {
