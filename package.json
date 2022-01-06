@@ -6,14 +6,8 @@
   "logseq": {
     "themes": [
       {
-        "name": "All Day Theme: Dark",
-        "url": "./custom.css",
-        "mode": "dark"
-      },
-      {
-        "name": "All Day Theme: Light",
-        "url": "./custom.css",
-        "mode": "light"
+        "name": "All Day Theme",
+        "url": "./custom.css"
       }
     ],
     "id": "logseq-allday-theme",
