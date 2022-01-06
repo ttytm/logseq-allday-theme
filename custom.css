@@ -5,39 +5,54 @@
   --ls-font-family: "Roboto", sans-serif;
 }
 
+/* Styles that apply to both modes. Coud be reduces further -> would make it harder to implement changes afterwards ... */
+html[data-theme="dark"],
 .dark-theme,
-html[data-theme="dark"] {
-  --ls-main-content-max-width: 700px;
-  --ls-primary-background-color: #1f2428;
-  --ls-secondary-background-color: #24292e;
-  --ls-tertiary-background-color: #282e34;
-  --ls-quaternary-background-color: rgba(246, 246, 246, 0.05);
-  --ls-table-tr-even-background-color: rgba(246, 246, 246, 0.065);
-  --ls-active-primary-color: #8ec2c2;
-  --ls-active-secondary-color: #eeffff;
-  --ls-page-properties-background-color: var(--ls-secondary-background-color);
-  --ls-block-properties-background-color: var(--ls-secondary-background-color);
-  --ls-block-ref-link-text-color: var(--ls-link-text-color);
-  --ls-search-background-color: var(--ls-secondary-background-color);
-  --ls-border-color: var(--ls-primary-text-color);
-  --ls-secondary-border-color: var(--ls-primary-text-color);
-  --ls-guideline-color: rgba(246, 246, 246, 0.2);
-  --ls-menu-hover-color: var(--ls-secondary-background-color);
-  --ls-primary-text-color: rgba(190, 195, 200, 0.95);
-  --ls-secondary-text-color: rgba(215, 215, 215, 0.7);
-  --ls-title-text-color: var(--ls-primary-text-color);
-  --ls-link-text-color: #b2dbdb;
-  --ls-link-text-hover-color: #fff;
+html[data-theme="light"],
+.white-theme {
   --ls-link-ref-text-color: var(--ls-link-text-color);
   --ls-link-ref-text-hover-color: var(--ls-link-text-hover-color);
   --ls-tag-text-color: var(--ls-link-text-color);
   --ls-tag-text-hover-color: var(--ls-link-text-hover-color);
-  --ls-slide-background-color: var(--ls-primary-background-color);
-  --ls-block-bullet-border-color: rgba(246, 246, 246, 0.25);
+  --ls-title-text-color: var(--ls-primary-text-color);
+  --ls-search-background-color: var(--ls-secondary-background-color);
+  --ls-border-color: var(--ls-primary-text-color);
+  --ls-secondary-border-color: var(--ls-primary-text-color);
+  --ls-page-properties-background-color: var(--ls-secondary-background-color);
+  --ls-block-properties-background-color: var(--ls-secondary-background-color);
+  --ls-block-ref-link-text-color: var(--ls-link-text-color);
+  --ls-head-text-color: var(--ls-link-text-color);
+  --ls-icon-color: var(--ls-link-text-color);
+  --ls-search-icon-color: var(--ls-link-text-color);
+  --color-level-1: var(--ls-secondary-background-color);
+  --color-level-2: var(--ls-tertiary-background-color);
+  --color-level-3: var(--ls-quaternary-background-color);
+  /* Bullets */
   --ls-block-bullet-color: var(--ls-quaternary-background-color);
   --ls-block-bullet-active-color: var(--ls-link-text-color);
   --ls-block-bullet-threading-width: 1px;
   --ls-bullet-closed-color: var(--ls-secondary-text-color);
+}
+
+/* dark theme and light theme sidebar */
+html[data-theme="dark"],
+.dark-theme,
+html[data-theme="light"] .left-sidebar-inner {
+  --ls-main-content-max-width: 700px;
+  --ls-primary-background-color: #1f2428;
+  --ls-secondary-background-color: #24292e;
+  --ls-tertiary-background-color: #282e34;
+  --ls-quaternary-background-color: #292e33;
+  --ls-table-tr-even-background-color: rgba(246, 246, 246, 0.065);
+  --ls-active-primary-color: #8ec2c2;
+  --ls-active-secondary-color: #eeffff;
+  --ls-guideline-color: rgba(246, 246, 246, 0.2);
+  --ls-menu-hover-color: var(--ls-secondary-background-color);
+  --ls-primary-text-color: rgba(190, 195, 200, 0.95);
+  --ls-secondary-text-color: rgba(215, 215, 215, 0.7);
+  --ls-link-text-color: #b2dbdb;
+  --ls-link-text-hover-color: #fff;
+  --ls-slide-background-color: var(--ls-primary-background-color);
   --ls-block-highlight-color: rgba(246, 246, 246, 0.1);
   --ls-selection-background-color: rgba(246, 246, 246, 0.1);
   --ls-page-checkbox-color: rgba(246, 246, 246, 0.1);
@@ -51,37 +66,46 @@ html[data-theme="dark"] {
   --ls-scrollbar-foreground-color: rgba(246, 246, 246, 0.15);
   --ls-scrollbar-background-color: var(--ls-primary-background-color);
   --ls-scrollbar-thumb-hover-color: rgba(246, 246, 246, 0.3);
-  --ls-head-text-color: var(--ls-link-text-color);
-  --ls-icon-color: var(--ls-link-text-color);
-  --ls-search-icon-color: var(--ls-link-text-color);
   --ls-a-chosen-bg: var(--ls-secondary-background-color);
   --ls-right-sidebar-code-bg-color: var(--ls-page-inline-code-bg-color);
-  --color-level-1: var(--ls-secondary-background-color);
-  --color-level-2: var(--ls-tertiary-background-color);
-  --color-level-3: var(--ls-quaternary-background-color);
+  --ls-block-bullet-border-color: rgba(246, 246, 246, 0.25);
 }
-.white-theme,
-html[data-theme="light"] {
-  --ls-primary-background-color: #fafafa;
-  --ls-secondary-background-color: #ededed;
-  --ls-tertiary-background-color: rgba(237, 237, 237, 0.9);
+html[data-theme="light"],
+.white-theme {
+  --ls-tertiary-rgb: 237, 237, 237; /* Just used once, abandoned reuse. So it is not necessary anymore to go that nested. But still does the job so it stays.*/
+  --ls-accent-rgb: 27, 125, 125;
+  color: rgb(22, 107, 107);
+  /* for code color picker pruposes */
+  --ls-primary-background-color: #f0f0f0;
+  --ls-secondary-background-color: #eaeaea;
+  --ls-tertiary-background-color: rgba(var(--ls-tertiary-rgb), 0.9);
+  --ls-quaternary-background-color: #e0dddd;
+  --ls-secondary-text-color: rgba(215, 215, 215, 0.7);
+  --ls-link-text-color: rgba(var(--ls-accent-rgb), 0.9);
+  --ls-link-text-hover-color: rgba(var(--ls-accent-rgb), 1);
+  --ls-active-primary-color: #8ec2c2;
   --ls-page-title-size: 2rem;
-  --ls-title-text-color: var(--ls-primary-text-color);
-  --ls-page-properties-background-color: var(--ls-secondary-background-color);
-  --ls-block-properties-background-color: var(--ls-secondary-background-color);
-  --ls-block-ref-link-text-color: var(--ls-link-text-color);
-  --ls-search-background-color: var(--ls-secondary-background-color);
   --ls-page-inline-code-color: var(--ls-primary-text-color);
   --ls-page-inline-code-bg-color: rgba(0, 0, 0, 0.2);
   --ls-page-title-size: 2rem;
   --ls-scrollbar-foreground-color: rgba(0, 0, 0, 0.2);
   --ls-scrollbar-background-color: var(--ls-primary-background-color);
   --ls-scrollbar-thumb-hover-color: rgba(0, 0, 0, 0.3);
-  --ls-head-text-color: var(--ls-link-text-color);
-  --ls-icon-color: var(--ls-link-text-color);
-  --ls-search-icon-color: var(--ls-link-text-color);
   --ls-a-chosen-bg: var(--ls-secondary-background-color);
   --ls-selection-background-color: rgba(0, 0, 0, 0.1);
+  --ls-block-bullet-active-color: #86b6b6;
+  --ls-block-bullet-border-color: rgba(128, 128, 128, 0.1);
+}
+/* .ls-block[haschild="true"]:focus-within > div > .block-content-wrapper::before {
+  border-color: var(--ls-block-bullet-active-color);
+} */
+
+.white-theme .cp__header a {
+  color: #6d7272;
+}
+
+.white-theme .cp__header a:hover {
+  background-color: rgba(128, 128, 128, 0.1);
 }
 
 /* ===[ Bullet Threading ]=== */
@@ -90,13 +114,14 @@ html[data-theme="light"] {
 }
 
 .block-children {
-  /* border-left-width: var(--ls-block-bullet-threading-width); */
-  margin-left: -2px;
+  border-left-width: var(--ls-block-bullet-threading-width);
+  border-color: var(--ls-quaternary-background-color);
+  margin-left: -3px;
 }
 .block-children-left-border {
   position: relative;
   z-index: 2;
-  background-color: var(--ls-quaternary-background-color);
+  background-color: transparent;
 }
 .block-children-left-border:hover {
   background-color: var(--ls-block-bullet-border-color);
@@ -312,7 +337,7 @@ mark .page-reference .bracket {
 .dark-theme .marker-switch {
   color: rgba(246, 246, 246, 0.5);
 }
-.white-theme .marker-switch {
+html[data-theme="light"] .marker-switch {
   color: rgba(0, 0, 0, 0.5);
 }
 
@@ -363,6 +388,9 @@ a.tag[data-ref] {
   padding: 0.2rem 0.3rem;
   transition: 0.3s;
   white-space: nowrap;
+}
+html[data-theme="light"] a.tag[data-ref] {
+  background-color: rgba(var(--ls-accent-rgb), 0.66);
 }
 
 a.tag[data-ref]:hover {
