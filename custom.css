@@ -22,6 +22,9 @@ html[data-theme="light"],
   --ls-block-properties-background-color: var(--ls-secondary-background-color);
   --ls-block-ref-link-text-color: var(--ls-link-text-color);
   --ls-head-text-color: var(--ls-link-text-color);
+  --ls-page-blockquote-color: var(--ls-primary-text-color);
+  --ls-page-blockquote-bg-color: var(--ls-secondary-background-color);
+  --ls-page-blockquote-border-color: var(--ls-border-color);
   --ls-icon-color: var(--ls-link-text-color);
   --ls-search-icon-color: var(--ls-link-text-color);
   --color-level-1: var(--ls-secondary-background-color);
@@ -57,9 +60,6 @@ html[data-theme="light"] .left-sidebar-inner {
   --ls-selection-background-color: rgba(246, 246, 246, 0.1);
   --ls-page-checkbox-color: rgba(246, 246, 246, 0.1);
   --ls-page-checkbox-border-color: var(--ls-primary-text-color);
-  --ls-page-blockquote-color: var(--ls-primary-text-color);
-  --ls-page-blockquote-bg-color: var(--ls-secondary-background-color);
-  --ls-page-blockquote-border-color: var(--ls-border-color);
   --ls-page-inline-code-color: var(--ls-primary-text-color);
   --ls-page-inline-code-bg-color: rgba(246, 246, 246, 0.2);
   --ls-page-title-size: 2rem;
@@ -88,6 +88,7 @@ html[data-theme="light"],
   --ls-page-inline-code-color: var(--ls-primary-text-color);
   --ls-page-inline-code-bg-color: rgba(0, 0, 0, 0.2);
   --ls-page-title-size: 2rem;
+  --ls-page-blockquote-border-color: rgba(var(--ls-accent-rgb), 0.25);
   --ls-scrollbar-foreground-color: rgba(0, 0, 0, 0.2);
   --ls-scrollbar-background-color: var(--ls-primary-background-color);
   --ls-scrollbar-thumb-hover-color: rgba(0, 0, 0, 0.3);
@@ -100,11 +101,11 @@ html[data-theme="light"],
   border-color: var(--ls-block-bullet-active-color);
 } */
 
-.white-theme .cp__header a {
+html[data-theme="light"] .cp__header a {
   color: #6d7272;
 }
 
-.white-theme .cp__header a:hover {
+html[data-theme="light"] a:hover {
   background-color: rgba(128, 128, 128, 0.1);
 }
 
@@ -273,7 +274,7 @@ mark {
   border-radius: 3px;
   font-size: 14px;
 }
-.white-theme mark {
+html[data-theme="light"] mark {
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -291,7 +292,7 @@ mark .page-reference .bracket {
 .dark-theme .form-checkbox {
   border: 1px solid rgba(246, 246, 246, 0.5);
 }
-.white-theme .form-checkbox {
+html[data-theme="light"] .form-checkbox {
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
@@ -300,7 +301,7 @@ mark .page-reference .bracket {
   background-color: var(--ls-primary-background-color);
 }
 
-.white-theme .form-checkbox:checked {
+html[data-theme="light"].form-checkbox:checked {
   border-color: rgba(0, 0, 0, 0.5);
   background-color: var(--ls-link-text-color);
 }
@@ -422,7 +423,8 @@ a.tag[data-ref]:hover {
 }
 
 .cm-s-solarized.cm-s-dark,
-.cm-s-solarized.cm-s-white {
+.cm-s-solarized.cm-s-white,
+.cm-s-solarized.cm-s-light {
   color: var(--ls-primary-text-color);
   background-color: var(--ls-primary-background-color);
   border: 7px solid var(--ls-secondary-background-color);
@@ -433,6 +435,9 @@ a.tag[data-ref]:hover {
 }
 .cm-s-solarized.cm-s-dark .CodeMirror-gutters {
   background-color: rgba(40, 42, 51, 0.5);
+}
+.cm-s-solarized.cm-s-light .CodeMirror-gutters {
+  background-color: rgba(40, 42, 51, 0.033);
 }
 
 .CodeMirror-linenumber {
