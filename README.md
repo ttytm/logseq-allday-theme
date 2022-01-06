@@ -1,9 +1,9 @@
 # All Day Theme for logseq
 
-Concentrating on providing the best workflow experiences: High readability and a look that won't exhaust the eyes. <br /> 
-The theme tries to accomplish this through styling decisions in typography, colors and spacing.
+Concentrating on providing the best workflow experiences, high readability and minimal eye strain.
 
-It provides an initially good overview of the note content section, without  the need for additional manual line-breaks.
+The theme tries to accomplish this through styling decisions in typography, colors and spacing.<br /> 
+It gives an initially good overview of the note content section and reduces the need for manual line-breaks.
 
 ## Preview
 
@@ -11,5 +11,5 @@ It provides an initially good overview of the note content section, without  the
 
 ---
 
-### Additional Notes
-The base code for the bullet threading feature came from dev theme. Kudos to the devs.
+### Credits
+Shout out to [dev theme](https://github.com/pengx17/logseq-dev-theme). The integration of the bullet threading feature was based on their implementation of it. Great work!
