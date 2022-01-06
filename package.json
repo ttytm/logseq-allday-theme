@@ -1,14 +1,19 @@
 {
   "name": "logseq-allday-theme",
   "author": "@tobealive",
-  "version": "0.1",
-  "description": "A paper like Logseq theme",
+  "version": "0.2",
+  "description": "A clean productivity theme. Styled for high readability and minimal eye strain.",
   "logseq": {
     "themes": [
       {
-        "name": "logseq-allday-theme",
+        "name": "All Day Theme: Dark",
         "url": "./custom.css",
-        "description": "High readability and a look that won't exhaust the eyes."
+        "mode": "dark"
+      },
+      {
+        "name": "All Day Theme: Light",
+        "url": "./custom.css",
+        "mode": "light"
       }
     ],
     "id": "logseq-allday-theme",
