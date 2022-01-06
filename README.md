@@ -1,6 +1,6 @@
 # All Day Theme for logseq
 
-Concentrating on providing the best workflow experiences, high readability and minimal eye strain.
+Concentrating on providing the best workflow experience, high readability and minimal eye strain.
 
 The theme tries to accomplish this through styling decisions in typography, colors and spacing.<br /> 
 It gives an initially good overview of the note content section and reduces the need for manual line-breaks.
