@@ -11,6 +11,7 @@
         "description": "High readability and a look that won't exhaust the eyes."
       }
     ],
-    "id": "logseq-allday-theme"
+    "id": "logseq-allday-theme",
+    "icon": "./icon.png"
   }
 }
