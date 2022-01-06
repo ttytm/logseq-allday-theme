@@ -9,7 +9,6 @@ It gives an initially good overview of the note content section and reduces the 
 
 ![Preview](https://github.com/tobealive/logseq-allday-theme/blob/main/preview.png)
 
----
 
 ## Credits
 Shout out to [dev theme](https://github.com/pengx17/logseq-dev-theme). The integration of the bullet threading feature was based on their implementation of it. Great work!
