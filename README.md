@@ -7,7 +7,7 @@ It gives an initially good overview of the note content section and reduces the 
 
 ## Preview
 
-![Preview](https://github.com/tobealive/logseq-allday-theme/blob/main/preview.png)
+![Preview](https://raw.githubusercontent.com/tobealive/logseq-allday-theme/main/preview.png)
 
 
 ## Credits
