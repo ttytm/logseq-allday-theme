@@ -174,7 +174,7 @@ html[data-theme="light"] a:hover {
 .ls-block .block-children > .ls-block::before {
   pointer-events: none;
   content: "";
-  top: -1.2rem;
+  top: -0.9rem;
   bottom: 0;
   border-left: var(--ls-block-bullet-threading-width) solid transparent;
   left: calc(var(--ls-block-bullet-threading-width) * -1);
@@ -473,7 +473,7 @@ a.tag[data-ref]:hover {
 
 .editor-inner :is(.h1, .h2),
 .ls-block :is(h1, h2) {
-  margin: 0.4em 0 !important;
+  margin: 0 0 0.4em !important;
 }
 .editor-inner :is(.h2),
 .ls-block :is(h2) {
@@ -519,7 +519,7 @@ a.tag[data-ref]:hover {
   .ls-block[haschild="true"]
   > div
   > .block-content-wrapper::before {
-  top: 1.2rem !important;
+  top: 0.9rem !important;
 }
 .block-children .ls-block[haschild="true"] div .block-content-wrapper::before {
   top: 0 !important;
