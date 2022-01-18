@@ -97,9 +97,6 @@ html[data-theme="light"],
   --ls-block-bullet-active-color: #86b6b6;
   --ls-block-bullet-border-color: rgba(128, 128, 128, 0.1);
 }
-/* .ls-block[haschild="true"]:focus-within > div > .block-content-wrapper::before {
-  border-color: var(--ls-block-bullet-active-color);
-} */
 
 html[data-theme="light"] .cp__header a {
   color: #6d7272;
@@ -140,18 +137,12 @@ html[data-theme="light"] a:hover {
 }
 
 /* Block bullet path should only show in a nested block */
-.ls-block {
-  /* Fix for headings like h1, h2 etc */
-  /* Basic "curve" */
-  /* Fix multi-line blocks with children */
-}
 .ls-block .bullet {
   background-color: var(--ls-block-bullet-active-color);
   box-shadow: 0 0 0 1px var(--ls-block-bullet-active-color);
 }
 .ls-block div.items-center {
   position: relative;
-  /* height: 26px !important; */
 }
 .ls-block > .items-baseline {
   align-items: baseline;
@@ -183,7 +174,7 @@ html[data-theme="light"] a:hover {
 .ls-block .block-children > .ls-block::before {
   pointer-events: none;
   content: "";
-  top: -1rem;
+  top: -1.2rem;
   bottom: 0;
   border-left: var(--ls-block-bullet-threading-width) solid transparent;
   left: calc(var(--ls-block-bullet-threading-width) * -1);
@@ -230,6 +221,16 @@ html[data-theme="light"] a:hover {
 .dark-theme .hover\:bg-indigo-700:hover,
 .hover\:bg-indigo-500:hover {
   background-color: var(--ls-primary-text-color);
+}
+
+.white-theme .bg-indigo-600 {
+  background-color: rgba(var(--ls-accent-rgb), 0.66);
+  color: var(--ls-primary-background-color);
+}
+
+.white-theme .hover\:bg-indigo-700:hover,
+.hover\:bg-indigo-500:hover {
+  background-color: rgba(var(--ls-accent-rgb), 0.66);
 }
 
 /* pre */
@@ -472,7 +473,7 @@ a.tag[data-ref]:hover {
 
 .editor-inner :is(.h1, .h2),
 .ls-block :is(h1, h2) {
-  margin: 0 0 0.5em !important;
+  margin: 0.4em 0 !important;
 }
 .editor-inner :is(.h2),
 .ls-block :is(h2) {
@@ -503,20 +504,7 @@ a.tag[data-ref]:hover {
   margin-bottom: 0;
 }
 .ls-block {
-  padding: 0.25em 0;
-}
-.ls-block[haschild="true"] {
-  padding-top: 0.5em !important;
-}
-/* .block-children > .ls-block[haschild="true"]:first-child {
-  padding-top: 0 !important;
-} */
-#lazy-blocks > div > .ls-block {
-  padding: 0.75em 0 !important;
-}
-
-#lazy-blocks > div > .ls-block:first-child {
-  margin-top: -0.5em;
+  padding-bottom: 0.5em;
 }
 .ls-block div.items-center {
   height: 24px !important;
@@ -526,15 +514,12 @@ a.tag[data-ref]:hover {
   margin-top: -18px;
   top: 0px;
 }
-.ls-block .block-children .ls-block::before {
-  top: -1rem;
-}
 #lazy-blocks
   > div
   .ls-block[haschild="true"]
   > div
   > .block-content-wrapper::before {
-  top: 1em !important;
+  top: 1.2rem !important;
 }
 .block-children .ls-block[haschild="true"] div .block-content-wrapper::before {
   top: 0 !important;
