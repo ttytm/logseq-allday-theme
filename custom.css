@@ -504,7 +504,7 @@ a.tag[data-ref]:hover {
   margin-bottom: 0;
 }
 .ls-block {
-  padding-bottom: 0.5em;
+  padding: 0.25em 0;
 }
 .ls-block div.items-center {
   height: 24px !important;
