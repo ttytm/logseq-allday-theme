@@ -1,8 +1,3 @@
-## 0.3
-
-- [x] Improved spacing on level-one elements
-- [x] Fixed light theme button colors
-
 ## 0.2
 
 - [x] Changelog added
