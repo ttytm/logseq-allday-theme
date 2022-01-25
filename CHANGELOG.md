@@ -1,3 +1,12 @@
+## 0.5
+
+- Abandon detailed changelog due to time saving reasons.
+- Now changes including this version can be compared in the todo updates.
+
+## 0.4
+
+- bump version for marketplace
+
 ## 0.3
 
 - [x] Improved spacing on level-one elements
@@ -11,5 +20,5 @@
 
 ## Dec 30, 2021
 
-- [x] Fixed interference with left-borders for blocks that occured in 0.5.6
+- [x] Fixed interference with left-borders for blocks that occurred in loqseq v0.5.6
 - [x] Worked on better contrasts
