@@ -9,6 +9,7 @@
   - [ ] Add Comments & Table of Contents in `.css` File
 - [ ] Add Plugin styling
   - [x] Tabs -> releasing fork soon (\*)
+    - [ ] Move margin-top fro main content from theme to tabs plugin so it'll be added conditionally when the plugin is used
   - [ ] Tag-Search
   - [x] TOC Generator Plugin
   - _(\*)Due to integration of many plugins as iframe and plugins missing implementation of loqseq's default and them styles it's hardly possible on many cases._
