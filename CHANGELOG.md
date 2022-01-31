@@ -1,3 +1,5 @@
+<sup>Abolished. Using `TODO.md` instead</sup>
+
 ## 0.5
 
 - Abandon detailed changelog due to time saving reasons.
