@@ -3,6 +3,7 @@
 
 :root {
   --ls-font-family: "Roboto", sans-serif;
+  font-size: 1.05rem;
 }
 
 /* Styles that apply to both modes. Coud be reduces further -> would make it harder to implement changes afterwards ... */
@@ -10,7 +11,7 @@ html[data-theme="dark"],
 .dark-theme,
 html[data-theme="light"],
 .white-theme {
-  --ls-main-content-max-width: 780px;
+  --ls-main-content-max-width: 800px;
   --ls-link-ref-text-color: var(--ls-link-text-color);
   --ls-link-ref-text-hover-color: var(--ls-link-text-hover-color);
   --ls-tag-text-color: var(--ls-link-text-color);
@@ -109,6 +110,12 @@ html[data-theme="light"] a:hover {
   background-color: rgba(128, 128, 128, 0.1);
 }
 /* ===[ Bullet Threading ]=== */
+/* Test to fix border. -> Looks like it can be fixed via margins */
+@media (min-width: 640px) {
+  .sm\:mr-2 {
+    margin-right: 8px;
+  }
+}
 .block-control {
   z-index: 1;
 }
@@ -251,13 +258,25 @@ html[data-theme="light"] a:hover {
   background-color: var(--ls-primary-text-color);
 }
 
+.dark-theme button.bg-white {
+  background-color: var(--ls-secondary-background-color);
+  border-color: var(--ls-block-bullet-border-color);
+  /* merge --ls-block-bullet-border-color with ls-border-color? #todo */
+  color: var(--ls-secondary-text-color);
+}
+
+.dark-theme button.bg-white:hover {
+  background-color: var(--ls-tertiary-background-color);
+  color: var(--ls-primary-text-color);
+}
+
 .white-theme .bg-indigo-600 {
   background-color: rgba(var(--ls-accent-rgb), 0.66);
   color: var(--ls-primary-background-color);
 }
 
-.white-theme .hover\:bg-indigo-700:hover,
-.hover\:bg-indigo-500:hover {
+/* .hover\:bg-indigo-500:hover  */
+.white-theme .hover\:bg-indigo-700:hover {
   background-color: rgba(var(--ls-accent-rgb), 0.66);
 }
 
@@ -499,9 +518,10 @@ a.tag[data-ref]:hover {
   background: var(--ls-selection-background-color);
 }
 
-.editor-inner .uniline-block:is(.h1, .h2, .h3),
-.editor-inner :is(.h1, .h2, .h3),
-.ls-block :is(h1, h2, h3) {
+/* { Headings } */
+.editor-inner .uniline-block:is(.h1, .h2, .h3, .h4, .h5, .h6),
+.editor-inner :is(.h1, .h2, .h3, .h4, .h5, .h6),
+.ls-block :is(h1, h2, h3, h4, h5, h6) {
   margin: 0;
   position: relative;
 }
@@ -511,6 +531,10 @@ a.tag[data-ref]:hover {
   display: block;
   height: 0.25em;
 } */
+.editor-inner .uniline-block:is(.h1, .h2),
+.ls-block :is(h1, h2) #pdf-layout-container[data-theme="dark"] {
+  background-color: var(--ls-quaternary-background-color);
+}
 .editor-inner .uniline-block:is(.h1),
 .editor-inner :is(.h1),
 .ls-block :is(h1) {
@@ -529,20 +553,40 @@ a.tag[data-ref]:hover {
 .ls-block :is(h2) {
   top: -0.15em;
 }
-.editor-inner .uniline-block:is(.h3),
-.editor-inner :is(.h3),
-.ls-block :is(h3) {
+.editor-inner .uniline-block:is(.h3, .h4, .h5, .h6),
+.editor-inner :is(.h3, .h4, .h5, .h6),
+.ls-block :is(h3, h4) {
   top: -0.25em;
   margin: 0.25em 0 -0.25em;
+}
+.editor-inner .uniline-block:is(.h4),
+.editor-inner :is(.h4),
+.ls-block :is(h4) {
+  font-size: 1.125em;
 }
 /* .editor-inner .uniline-block:is(.h3),
 .editor-inner :is(.h3) {
   top: 0.1em;
 } */
-.editor-inner .uniline-block:is(.h1, .h2),
-.ls-block :is(h1, h2) #pdf-layout-container[data-theme="dark"] {
-  background-color: var(--ls-quaternary-background-color);
+/* .editor-inner .uniline-block:is(.h5, .h6),
+.editor-inner :is(.h5, .h6),
+.ls-block :is(h5, h6) {
+  font-size: 1em;
+  min-height: 1.5em;  
+} */
+/* check importance of min-height #todo */
+
+.editor-inner .uniline-block:is(.h5),
+.editor-inner :is(.h5),
+.ls-block :is(h5) {
+  font-size: 1.0625em;
 }
+.editor-inner .uniline-block:is(.h6),
+.editor-inner :is(.h6),
+.ls-block :is(h6) {
+  font-size: 1em;
+}
+
 #pdf-layout-container[data-theme="dark"] .textLayer {
   background-color: var(--ls-tertiary-background-color);
 }
