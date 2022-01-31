@@ -9,3 +9,5 @@
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+NOTES.md
