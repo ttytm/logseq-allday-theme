@@ -1,21 +1,38 @@
 # TODO:
 
-- [ ] `B` `😌` PDF preview
-- [ ] `A` `😌` Increase / fix font-size
+**`A`**
+
+- [x] `😌` Increase / fix font-size
   - [x] Body
   - [x] H5, H6
-  - [ ] Menu & theme select
-- [ ] `B` `😌` Background color in marketplace previews
-- [ ] `A` `🤓` Bullet threading on block embed
-- [ ] `B` `😌` Other visual hint then strike from finished todos
-- [ ] `A` `🧐` Border left bug for inline elements
-<!-- - [ ] Ask for experiences with bug. E.g. Stack Overflow. -->
-- [ ] `B` `🤓` Find better text color
-- [ ] `B` Update `README.md` → Add how to change color scheme, Info to disable bullet threading plugin.
-- [ ] `C` `🤓` Update icon
-- [ ] `B` `🧐` Cleanup & Refactor CSS!
-  - [ ] Add Comments & Table of Contents
-- [x] `B` `😌` Button color for dark mode in delete dialog
+  - [x] Menu & theme select
+- [ ] `🤓` Bullet threading on block embed
+- [x] `🧐` Border left bug for inline elements
+- [ ] `😌` ~~Re-add border-left fix for compatibility<0.5.9~~
+  - <small>Due to breaking Changes in program version → not possible to add version logseq version specific CSS to support other versions.</small>
+
+**`B`**
+
+- [x] `😌` Fix light theme colors
+  - [x] secondary-text-color
+  - [x] code color using single backticks \` \`
+- [x] `😌` Align codeblock lang
+- [ ] `😌` PDF preview
+- [ ] `😌` Background color in marketplace previews
+- [ ] `😌` Other visual hint then strike for finished todos
+- [x] Update `README.md`
+  - [x] Add how to change color scheme
+  - [x] Info to disable bullet threading plugin as it can conflict with integrated bt
+- [ ] `🧐` Cleanup, sort & refactor CSS!
+  - [ ] Add table of contents & better comments
+- [x] `😌` Button color for dark mode in delete dialog
+
+**`C`**
+
+- [ ] `🤓` Update icon
+
+`Unsorted`
+
 - [x] Fix & improve spacing after inferences in last update
 - [x] Better contrast / visual hint for links
 - [x] Improve bullet threading on inline blocks
@@ -32,23 +49,23 @@ Estimated difficulty / time required: Low `😌` | Medium `🤓` | High `🧐`
 
 <!-- Alternative: Low `🤙` | Medium `👌` | High `🤞` -->
 
-<sub>_Mental note:
+<small>_Mental note:
 Make commits to `TODO.md` better comparable by not throwing them around - even though it can get unsorted and not that pretty.
-→ Add new items and leave rest as it is._</sub>
+→ Add new items and leave rest as it is._</small>
 
 ---
 
 ## Plugin Support
 
-- [x] Tabs (\*)
+- [x] Tabs <small>(\*)</small>
   - [x] Styling
   - [ ] Release cross theme compatible fork
   - [ ] Move margin-top for main content from theme.css to tabs-plugin so it'll be added conditionally when the plugin is used
-- [ ] Tag-Search (\*)
+- [ ] Tag-Search <small>(\*)</small>
 - [x] TOC Generator Plugin
   - [ ] Light theme background
 
-<sub>_(\*)Due to integration of many plugins as iframe and the plugins missing implementation of Logseq's `styles.css` and themes `custom.css`, it's hardly possible to style many plugins directly via theme css._</sub>
+<small>_(\*)Due to integration of many plugins as iframe and the plugins missing implementation of Logseq's `styles.css` and themes `custom.css`, it's hardly possible to style many plugins directly via theme css._</small>
 
 ---
 
