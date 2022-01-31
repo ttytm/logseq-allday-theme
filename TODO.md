@@ -1,14 +1,24 @@
 # TODOs:
 
+- [ ] Increase font-size
+- [ ] Backgroundcolor for Marketplace Previews
+- [ ] H6 Size
+- [ ] Bulletthreadding on bluck embbed
+- [ ] Ligature Font
+- [ ] Remove strike from finished todos
+- [ ] Border left Bug for inline Elements
+  - [ ] Ask for experiences on Stack Overflow
+- [ ] Find better text color
+- [ ] Update `README.md` → Add how to change color scheme, Info to disable bullet threading plugin.
+- [ ] Button Colors for dark mode in delete dialog
+  - Mental note. Uses `.bg-white` so target `.bg-white` in .dark-theme specified for buttons.
+- [ ] Update Icon
+- [ ] Cleanup & Refactor CSS!
+  - [ ] Add Comments & Table of Contents
 - [x] Fix & improve spacing after inferences in last update
 - [x] Better contrast / visual hint for links
 - [x] Improve Bullet threading on embedded / inline blocks
-- [ ] Update `README.md` → Add how to change color scheme
-- [ ] Button Colors for dark mode in delete dialog
-  - Mental note. Uses `.bg-white` so target `.bg-white` in .dark-theme specified for buttons.
 - [x] Horizontal Line Color
-- [ ] Cleanup & Refactor CSS!
-  - [ ] Add Comments & Table of Contents
 - [x] Light Theme Menu Button Color
 - [x] Improve spacing on level one elements
   - _E.g. making some quick notes using only level-one items without further formatting and children, spacing between items is too large._
