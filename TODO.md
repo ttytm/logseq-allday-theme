@@ -6,19 +6,22 @@
   - [x] Body
   - [x] H5, H6
   - [x] Menu & theme select
-- [ ] `🤓` Bullet threading on block embed
+- [x] `🤓` Fix bullet threading for embed blocks
 - [x] `🧐` Border left bug for inline elements
-- [ ] `😌` ~~Re-add border-left fix for compatibility<0.5.9~~
-  - <small>Due to breaking Changes in program version → not possible to add version logseq version specific CSS to support other versions.</small>
+- ~~Re-add border-left fix for compatibility<0.5.9~~
+  - <sup>_Due to breaking changes in program version → not possible to add version logseq version specific CSS to support older versions._</sup>
 
 **`B`**
 
-- [x] `😌` Fix light theme colors
-  - [x] secondary-text-color
-  - [x] code color using single backticks \` \`
+- [x] `😌` Add rounded borders to codeblocks, quotes etc. for style consistency
+- [ ] `😌` Fix light theme colors
+  - [ ] PDF annotations page heading color
+  - [ ] PDF toolbar button colors
+  - [ ] Bullet fold hovers
+  - [x] Secondary-text-color
+  - [x] Code color using single backticks \` \`
 - [x] `😌` Align codeblock lang
-- [ ] `😌` PDF preview
-- [ ] `😌` Background color in marketplace previews
+- [x] `😌` PDF preview
 - [ ] `😌` Other visual hint then strike for finished todos
 - [x] Update `README.md`
   - [x] Add how to change color scheme
@@ -29,6 +32,7 @@
 
 **`C`**
 
+- [ ] `🤓` Update style in TODOs lists for style consistency
 - [ ] `🤓` Update icon
 
 `Unsorted`
@@ -49,23 +53,24 @@ Estimated difficulty / time required: Low `😌` | Medium `🤓` | High `🧐`
 
 <!-- Alternative: Low `🤙` | Medium `👌` | High `🤞` -->
 
-<small>_Mental note:
-Make commits to `TODO.md` better comparable by not throwing them around - even though it can get unsorted and not that pretty.
-→ Add new items and leave rest as it is._</small>
+<sub>_Mental note:
+Make commits to `TODO.md` better comparable by not throwing them around - even though it can get unsorted and not that pretty (Trying to hold on to that lol).<br />
+→ Add new items and leave rest as it is._</sub>
 
 ---
 
 ## Plugin Support
 
-- [x] Tabs <small>(\*)</small>
-  - [x] Styling
+- [ ] Background color in marketplace previews<sup>(\*)</sup>
+- [x] Tabs<sup>(\*)</sup>
+  - [x] Style
   - [ ] Release cross theme compatible fork
   - [ ] Move margin-top for main content from theme.css to tabs-plugin so it'll be added conditionally when the plugin is used
-- [ ] Tag-Search <small>(\*)</small>
+- [ ] Tag-Search<sup>(\*)</sup>
 - [x] TOC Generator Plugin
-  - [ ] Light theme background
+  - [x] Light theme background
 
-<small>_(\*)Due to integration of many plugins as iframe and the plugins missing implementation of Logseq's `styles.css` and themes `custom.css`, it's hardly possible to style many plugins directly via theme css._</small>
+<sub>_(\*)Marketplace previews and many plugins are implemented as iframe. Due to this the plugins miss implementation of Logseq's `styles.css` and themes `custom.css`. This makes it hardly possible to style those plugins directly with the themes CSS._</sub>
 
 ---
 

@@ -14,8 +14,7 @@
 2.1. Navs & Menus
 2.2. Main Body
 2.3. Sidebar
-2.4. Footer
-3. Popups & Modals
+3. Plugins
 ====================== */
 
 /* Usage formatting */
@@ -135,13 +134,13 @@ html[data-theme="light"] a:hover {
   background-color: rgba(128, 128, 128, 0.1);
 }
 
-small {
-  font-size: 0.85em;
+.cp__themes-installed > .it > section > strong {
+  font-size: 0.9em;
 }
 /* ==={ Bullet Threading }=== */
 .block-control,
 .block-control:hover {
-  width: 21.7px;
+  width: 21.75px;
   min-width: 0;
 }
 /* ⬇ probably not necessary consider removing when refactoring */
@@ -203,7 +202,6 @@ z-index: 1;
   right: 6px;
   top: calc(-100% + var(--ls-block-bullet-threading-width) * 0.5 - 1px);
   bottom: 50%;
-  /* shift left 1px for border */
   position: absolute;
   border-left: var(--ls-block-bullet-threading-width) solid transparent;
   border-bottom: var(--ls-block-bullet-threading-width) solid transparent;
@@ -215,7 +213,7 @@ z-index: 1;
 .ls-block .block-children > .ls-block::before {
   pointer-events: none;
   content: "";
-  top: -1.2rem;
+  top: -1.19em;
   bottom: 0;
   border-left: var(--ls-block-bullet-threading-width) solid transparent;
   left: calc(var(--ls-block-bullet-threading-width) * -1);
@@ -252,20 +250,15 @@ z-index: 1;
   position: absolute;
   border-left: var(--ls-block-bullet-threading-width) solid transparent;
 }
-/* .block-children > div[haschild="true"] .block-content.inline::before {
-  pointer-events: none;
-  content: "";
-  top: 12px;
-  bottom: 0;
-  left: -16px;
-  position: absolute;
-  border-left: var(--ls-block-bullet-threading-width) solid transparent;
-} */
 .ls-block[haschild="true"]:focus-within
   > div
   > .block-content-wrapper
   .block-content::before {
   border-color: var(--ls-block-bullet-active-color);
+}
+/* disables first fracking level for embedded blocks */
+.embed-block > div > div > div > div > div > div > div.items-center::before {
+  border-color: transparent !important;
 }
 
 /* Disable for doc mode */
@@ -407,7 +400,7 @@ html[data-theme="light"].form-checkbox:checked {
   font-weight: 500;
   display: inline-block;
   text-align: center;
-  height: 16px;
+  height: 15px;
   opacity: 1;
   padding: 0.1rem 0.25rem 0.1rem 0.25rem;
   border: 1px solid;
@@ -491,10 +484,11 @@ a.tag[data-ref]:hover {
 }
 
 /* === CodeMirror === */
-.CodeMirror {
+.extensions__code > .CodeMirror {
   font-family: "Fira Code", monospace;
   line-height: 1.2;
   background: var(--ls-secondary-background-color);
+  border-radius: 0.25rem;
 }
 
 .CodeMirror-hscrollbar {
@@ -653,7 +647,7 @@ a.tag[data-ref]:hover {
 /* { Table of Contents Plugin } */
 [id^="kef-toc"][id$="tocgen"]:not([id*="backtop"]) {
   /* border: 1px solid var(--ls-secondary-background-color); */
-  border-radius: 10px;
+  border-radius: 0.25rem;
   padding: 22px 44px 22px 22px;
   /* margin-left: -22px; */
   background-color: var(--ls-quaternary-background-color);

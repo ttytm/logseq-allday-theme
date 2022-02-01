@@ -14,9 +14,9 @@ Which results in an initially good overview of the note content section and redu
 Switching between dark / light mode is possible under Settings→General.
 
 As the theme has implemented bullet threading, it can conflict with the
-bullet threading plugin. I'll recommend turning the plugin off when using this theme.
+bullet threading plugin. If you have installed the plugin, I'll recommend turning it off when using this theme.
 
-Due to changes in the recent versions of Loegseq, please upgrade to current version<small>(0.5.9)</small>. The themes styling for some elements needed to be adapted to work in the new version.
+Due to changes in the recent versions of Loegseq, please upgrade to current version<sup>(0.5.9)</sup>. The themes styling for some elements needed to be adapted to work in the new version.
 
 ## Credits
 
