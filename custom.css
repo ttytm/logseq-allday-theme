@@ -1,11 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
-
 /* ToC below is an example template created for later refactoring purposes */
 /* Table of Contents
 ======================
 1. Global
-1.1. Color Palette
+1.1. Color Palette & Variables
 1.2. Helper Classes 
 1.2. General Layout
 1.3. Typography
@@ -14,22 +11,23 @@
 2.1. Navs & Menus
 2.2. Main Body
 2.3. Sidebar
-3. Plugins
+3. Bullet threading
+4. Plugin specific
 ====================== */
 
-/* Usage formatting */
-
 /* ==={ 1. Global }=== */
-
-/* { 1.1. Color Palette } */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
 
 :root {
   --ls-font-family: "Roboto", sans-serif;
   font-size: 1.0375rem;
 }
 
-/* Styles that apply to both theme variants. 
-Coud be reduced further, but as it would make it harder to implement changes afterwards and theme is not 100% finished yet we'll leve it ... */
+/* ={ 1.1.Color Palette & Variables }= */
+
+/* Styles that apply to both dark & light mode. 
+Could be merged further, but as it would make it harder to implement changes afterwards and theme is not 100% finished yet we'll leave it ... */
 html[data-theme="dark"],
 .dark-theme,
 html[data-theme="light"],
@@ -41,12 +39,14 @@ html[data-theme="light"],
   --ls-tag-text-color: var(--ls-link-text-color);
   --ls-tag-text-hover-color: var(--ls-link-text-hover-color);
   --ls-title-text-color: var(--ls-primary-text-color);
+  --ls-page-title-size: 2rem;
   --ls-search-background-color: var(--ls-secondary-background-color);
   --ls-border-color: var(--ls-quaternary-background-color);
   --ls-secondary-border-color: var(--ls-primary-text-color);
   --ls-page-properties-background-color: var(--ls-secondary-background-color);
   --ls-block-properties-background-color: var(--ls-secondary-background-color);
   --ls-block-ref-link-text-color: var(--ls-link-text-color);
+  --ls-a-chosen-bg: var(--ls-secondary-background-color);
   --ls-head-text-color: var(--ls-link-text-color);
   --ls-page-blockquote-color: var(--ls-primary-text-color);
   --ls-page-blockquote-bg-color: var(--ls-secondary-background-color);
@@ -56,6 +56,7 @@ html[data-theme="light"],
   --color-level-1: var(--ls-secondary-background-color);
   --color-level-2: var(--ls-tertiary-background-color);
   --color-level-3: var(--ls-quaternary-background-color);
+  --ls-scrollbar-background-color: var(--ls-primary-background-color);
   /* Bullets */
   --ls-block-bullet-color: var(--ls-quaternary-background-color);
   --ls-block-bullet-active-color: var(--ls-link-text-color);
@@ -63,7 +64,7 @@ html[data-theme="light"],
   --ls-bullet-closed-color: var(--ls-secondary-text-color);
 }
 
-/* { Dark theme & Light theme sidebar } */
+/*  Dark theme & Light themes left sidebar  */
 html[data-theme="dark"],
 .dark-theme,
 html[data-theme="light"] .left-sidebar-inner {
@@ -71,202 +72,71 @@ html[data-theme="light"] .left-sidebar-inner {
   --ls-secondary-background-color: #24292e;
   --ls-tertiary-background-color: #282e34;
   --ls-quaternary-background-color: #292e33;
+  --ls-selection-background-color: rgba(246, 246, 246, 0.1);
   --ls-table-tr-even-background-color: rgba(246, 246, 246, 0.065);
   --ls-active-primary-color: #8ec2c2;
   --ls-active-secondary-color: #eeffff;
   --ls-guideline-color: rgba(246, 246, 246, 0.2);
-  --ls-menu-hover-color: var(--ls-secondary-background-color);
-  /* text */
   --primary-text-opacity: 0.98;
   --ls-primary-text-color: rgba(195, 200, 205, var(--primary-text-opacity));
   --ls-secondary-text-color: rgba(195, 200, 205, 0.66);
   --ls-link-text-color: rgba(178, 219, 219);
   --ls-link-text-hover-color: rgba(244, 244, 244, var(--primary-text-opacity));
-  --ls-page-title-size: 2rem;
-  /*  */
+  --ls-menu-hover-color: var(--ls-secondary-background-color);
   --ls-slide-background-color: var(--ls-primary-background-color);
   --ls-block-highlight-color: rgba(246, 246, 246, 0.1);
-  --ls-selection-background-color: rgba(246, 246, 246, 0.1);
   --ls-page-checkbox-color: rgba(246, 246, 246, 0.1);
   --ls-page-checkbox-border-color: var(--ls-primary-text-color);
   --ls-page-inline-code-color: var(--ls-primary-text-color);
   --ls-page-inline-code-bg-color: rgba(246, 246, 246, 0.2);
   --ls-scrollbar-foreground-color: rgba(246, 246, 246, 0.15);
-  --ls-scrollbar-background-color: var(--ls-primary-background-color);
   --ls-scrollbar-thumb-hover-color: rgba(246, 246, 246, 0.3);
-  --ls-a-chosen-bg: var(--ls-secondary-background-color);
   --ls-right-sidebar-code-bg-color: var(--ls-page-inline-code-bg-color);
   --ls-block-bullet-border-color: rgba(246, 246, 246, 0.25);
 }
 
-/* { Light theme } */
+/* Light theme */
 html[data-theme="light"],
 .white-theme {
-  --ls-tertiary-rgb: 237, 237, 237; /* Abandoned the reuse. Just used once now. It's not necessary to go that nested anymore. It still does the job but will probably removed in refactoring.*/
   --ls-accent-rgb: 27, 125, 125;
-  --ls-primary-background-color: #f0f0f0;
-  --ls-secondary-background-color: #eaeaea;
-  --ls-tertiary-background-color: rgba(var(--ls-tertiary-rgb), 0.9);
-  --ls-quaternary-background-color: #e0dddd;
+  --ls-primary-background-color: #f0f0f1;
+  --ls-secondary-background-color: #e3e7e9f0;
+  --ls-tertiary-background-color: rgba(225, 225, 225, 0.9);
+  --ls-quaternary-background-color: #e0e1e1;
+  --ls-selection-background-color: rgba(0, 0, 0, 0.1);
+  --ls-active-primary-color: #8ec2c2;
   --ls-secondary-text-color: rgba(33, 33, 33, 0.8);
   --ls-link-text-color: rgba(var(--ls-accent-rgb), 0.9);
   --ls-link-text-hover-color: rgba(var(--ls-accent-rgb), 1);
-  --ls-active-primary-color: #8ec2c2;
-  --ls-page-title-size: 2rem;
   --ls-page-inline-code-color: var(--ls-primary-text-color);
   --ls-page-inline-code-bg-color: rgba(0, 0, 0, 0.1);
-  --ls-page-title-size: 2rem;
   --ls-page-blockquote-border-color: rgba(var(--ls-accent-rgb), 0.25);
   --ls-scrollbar-foreground-color: rgba(0, 0, 0, 0.2);
-  --ls-scrollbar-background-color: var(--ls-primary-background-color);
   --ls-scrollbar-thumb-hover-color: rgba(0, 0, 0, 0.3);
-  --ls-a-chosen-bg: var(--ls-secondary-background-color);
-  --ls-selection-background-color: rgba(0, 0, 0, 0.1);
   --ls-block-bullet-active-color: #86b6b6;
   --ls-block-bullet-border-color: rgba(128, 128, 128, 0.1);
 }
 
-html[data-theme="light"] .cp__header a {
+/* ={ 1.3. Typography }= */
+.cp__themes-installed > .it > section > strong {
+  font-size: 0.875em;
+}
+
+/* ={ 1.4. Links & Buttons }= */
+
+html[data-theme="light"] .cp__header a,
+html[data-theme="light"] .extensions__pdf-toolbar > .inner > .r a,
+html[data-theme="light"] a svg {
   color: #6d7272;
 }
 
+html[data-theme="light"] h1 a {
+  color: var(--ls-title-text-color);
+}
+
 html[data-theme="light"] a:hover {
-  background-color: rgba(128, 128, 128, 0.1);
-}
-
-.cp__themes-installed > .it > section > strong {
-  font-size: 0.9em;
-}
-/* ==={ Bullet Threading }=== */
-.block-control,
-.block-control:hover {
-  width: 21.75px;
-  min-width: 0;
-}
-/* ⬇ probably not necessary consider removing when refactoring */
-/* .block-control {
-z-index: 1; 
-} */
-.block-children {
-  border-left-width: var(--ls-block-bullet-threading-width);
-  border-color: var(--ls-quaternary-background-color);
-  border-radius: 0;
-  /* ⬇necessary for compatibility with some versions below 0.5.9  */
-  /* margin-left: -3px; */
-}
-
-/* .block-children-left-border {
-  position: relative;
-  z-index: 2;
-  background-color: transparent;
-} */
-.block-children-left-border:hover {
-  background-color: var(--ls-block-bullet-border-color);
-}
-
-.block-content-wrapper {
-  position: relative;
-}
-
-.bullet-container {
-  height: 14px !important;
-  width: 14px !important;
-  position: relative;
-  transform: translate(1px, -1px);
-  /* align-items: end; */
-}
-
-/* Block bullet path should only show in a nested block */
-.ls-block .bullet {
-  background-color: var(--ls-block-bullet-active-color);
-  box-shadow: 0 0 0 1px var(--ls-block-bullet-active-color);
-}
-.ls-block div.items-center {
-  position: relative;
-}
-.ls-block > .items-baseline {
-  align-items: baseline;
-}
-.ls-block:not(:focus-within) .bullet {
-  background-color: var(--ls-block-bullet-color);
-  transform: scale(1);
-  box-shadow: none;
-}
-.ls-block:not(:focus-within) > .items-baseline {
-  align-items: baseline;
-}
-.ls-block .ls-block > div > div.items-center::before {
-  pointer-events: none;
-  content: "";
-  left: calc(var(--ls-block-bullet-threading-width) * -1);
-  right: 6px;
-  top: calc(-100% + var(--ls-block-bullet-threading-width) * 0.5 - 1px);
-  bottom: 50%;
-  position: absolute;
-  border-left: var(--ls-block-bullet-threading-width) solid transparent;
-  border-bottom: var(--ls-block-bullet-threading-width) solid transparent;
-  border-bottom-left-radius: 6px;
-}
-.ls-block .ls-block:focus-within > div > div.items-center::before {
-  border-color: var(--ls-block-bullet-active-color);
-}
-.ls-block .block-children > .ls-block::before {
-  pointer-events: none;
-  content: "";
-  top: -1.19em;
-  bottom: 0;
-  border-left: var(--ls-block-bullet-threading-width) solid transparent;
-  left: calc(var(--ls-block-bullet-threading-width) * -1);
-  position: absolute;
-}
-.ls-block .block-children:focus-within > .ls-block:not(:focus-within)::before {
-  border-color: var(--ls-block-bullet-active-color);
-}
-.ls-block
-  .block-children:focus-within
-  > .ls-block:focus-within
-  ~ .ls-block::before {
-  border-color: transparent;
-}
-.ls-block[haschild="true"] > div > .block-content-wrapper::before {
-  pointer-events: none;
-  content: "";
-  top: 12px;
-  bottom: 0;
-  left: -15px;
-  position: absolute;
-  border-left: var(--ls-block-bullet-threading-width) solid transparent;
-}
-/* Attempts to fix bullet tracking gap on inline blocks */
-.ls-block[haschild="true"]
-  > div
-  > .block-content-wrapper
-  .block-content.inline::before {
-  pointer-events: none;
-  content: "";
-  top: 16px;
-  bottom: 0;
-  left: -15px;
-  position: absolute;
-  border-left: var(--ls-block-bullet-threading-width) solid transparent;
-}
-.ls-block[haschild="true"]:focus-within
-  > div
-  > .block-content-wrapper
-  .block-content::before {
-  border-color: var(--ls-block-bullet-active-color);
-}
-/* disables first fracking level for embedded blocks */
-.embed-block > div > div > div > div > div > div > div.items-center::before {
-  border-color: transparent !important;
-}
-
-/* Disable for doc mode */
-.doc-mode div.items-center::before,
-.doc-mode div.items-center::after,
-.doc-mode .ls-block::before,
-.doc-mode .ls-block::after {
-  display: none;
+  color: var(--ls-primary-text-color);
+  background-color: var(--ls-quaternary-background-color);
 }
 
 /* === Custom colors in buttons, hints etc ===  */
@@ -330,7 +200,7 @@ a.open-block-ref-link {
 /* .dark-theme b,
 .dark-theme strong {
   color: #fff;
-} */
+}= */
 
 /* brackets in links */
 .page-reference .bracket {
@@ -544,7 +414,7 @@ a.tag[data-ref]:hover {
   background: var(--ls-selection-background-color);
 }
 
-/* { Headings } */
+/* ={ Headings }= */
 .editor-inner .uniline-block:is(.h1, .h2, .h3, .h4, .h5, .h6),
 .editor-inner :is(.h1, .h2, .h3, .h4, .h5, .h6),
 .ls-block :is(h1, h2, h3, h4, h5, h6) {
@@ -556,11 +426,7 @@ a.tag[data-ref]:hover {
   width: 100%;
   display: block;
   height: 0.25em;
-} */
-.editor-inner .uniline-block:is(.h1, .h2),
-.ls-block :is(h1, h2) #pdf-layout-container[data-theme="dark"] {
-  background-color: var(--ls-quaternary-background-color);
-}
+}= */
 .editor-inner .uniline-block:is(.h1),
 .editor-inner :is(.h1),
 .ls-block :is(h1) {
@@ -574,7 +440,7 @@ a.tag[data-ref]:hover {
   height: 0.25em;
   width: 100%;
   display: block;
-} */
+}= */
 /* .editor-inner :is(.h2), */
 .ls-block :is(h2) {
   top: -0.15em;
@@ -593,13 +459,13 @@ a.tag[data-ref]:hover {
 /* .editor-inner .uniline-block:is(.h3),
 .editor-inner :is(.h3) {
   top: 0.1em;
-} */
+}= */
 /* .editor-inner .uniline-block:is(.h5, .h6),
 .editor-inner :is(.h5, .h6),
 .ls-block :is(h5, h6) {
   font-size: 1em;
   min-height: 1.5em;  
-} */
+}= */
 /* check importance of min-height #todo */
 
 .editor-inner .uniline-block:is(.h5),
@@ -611,10 +477,6 @@ a.tag[data-ref]:hover {
 .editor-inner :is(.h6),
 .ls-block :is(h6) {
   font-size: 1em;
-}
-
-#pdf-layout-container[data-theme="dark"] .textLayer {
-  background-color: var(--ls-tertiary-background-color);
 }
 
 .block-body ul > li {
@@ -643,14 +505,161 @@ a.tag[data-ref]:hover {
   top: 0.9rem;
 }
 
-/* ==={ Plugin Specific }=== */
-/* { Table of Contents Plugin } */
+#pdf-layout-container[data-theme="dark"],
+#pdf-layout-container[data-theme="light"] {
+  background-color: var(--ls-quaternary-background-color);
+}
+#pdf-layout-container[data-theme="dark"] .textLayer {
+  background-color: var(--ls-tertiary-background-color);
+}
+#pdf-layout-container[data-theme="light"] .textLayer {
+  background-color: var(--ls-primary-background-color);
+}
+#pdf-layout-container[data-theme="dark"] .extensions__pdf-toolbar,
+#pdf-layout-container[data-theme="light"] .extensions__pdf-toolbar {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0) 10%,
+    var(--ls-primary-background-color) 100%
+  );
+}
+/* ==={ 3. Bullet Threading }=== */
+.block-control,
+.block-control:hover {
+  /* Some bug going on here to make the left border highlight cross device compatible. Assigning this "wired" width seems to solve it */
+  width: 1.551em;
+  min-width: 0;
+}
+.block-children {
+  border-left-width: var(--ls-block-bullet-threading-width);
+  border-color: var(--ls-quaternary-background-color);
+  border-radius: 0;
+  /* ⬇necessary for compatibility with some versions below 0.5.9  */
+  /* margin-left: -3px; */
+}
+
+/* .block-children-left-border {
+  position: relative;
+  z-index: 2;
+  background-color: transparent;
+}= */
+.block-children-left-border:hover {
+  background-color: var(--ls-block-bullet-border-color);
+}
+
+.block-content-wrapper {
+  position: relative;
+}
+
+.bullet-container {
+  height: 14px !important;
+  width: 14px !important;
+  position: relative;
+  transform: translate(1px, -1px);
+  /* align-items: end; */
+}
+
+/* Block bullet path should only show in a nested block */
+.ls-block .bullet {
+  background-color: var(--ls-block-bullet-active-color);
+  box-shadow: 0 0 0 1px var(--ls-block-bullet-active-color);
+}
+.ls-block div.items-center {
+  position: relative;
+}
+.ls-block > .items-baseline {
+  align-items: baseline;
+}
+.ls-block:not(:focus-within) .bullet {
+  background-color: var(--ls-block-bullet-color);
+  transform: scale(1);
+  box-shadow: none;
+}
+.ls-block:not(:focus-within) > .items-baseline {
+  align-items: baseline;
+}
+.ls-block .ls-block > div > div.items-center::before {
+  pointer-events: none;
+  content: "";
+  left: calc(var(--ls-block-bullet-threading-width) * -1);
+  right: 6px;
+  top: calc(-100% + var(--ls-block-bullet-threading-width) * 0.5 - 1px);
+  bottom: 50%;
+  position: absolute;
+  border-left: var(--ls-block-bullet-threading-width) solid transparent;
+  border-bottom: var(--ls-block-bullet-threading-width) solid transparent;
+  border-bottom-left-radius: 6px;
+}
+.ls-block .ls-block:focus-within > div > div.items-center::before {
+  border-color: var(--ls-block-bullet-active-color);
+}
+.ls-block .block-children > .ls-block::before {
+  pointer-events: none;
+  content: "";
+  top: -1.19em;
+  bottom: 0;
+  border-left: var(--ls-block-bullet-threading-width) solid transparent;
+  left: calc(var(--ls-block-bullet-threading-width) * -1);
+  position: absolute;
+}
+.ls-block .block-children:focus-within > .ls-block:not(:focus-within)::before {
+  border-color: var(--ls-block-bullet-active-color);
+}
+.ls-block
+  .block-children:focus-within
+  > .ls-block:focus-within
+  ~ .ls-block::before {
+  border-color: transparent;
+}
+.ls-block[haschild="true"] > div > .block-content-wrapper::before {
+  pointer-events: none;
+  content: "";
+  top: 12px;
+  bottom: 0;
+  left: -15px;
+  position: absolute;
+  border-left: var(--ls-block-bullet-threading-width) solid transparent;
+}
+/* Attempts to fix bullet tracking gap on inline blocks */
+.ls-block[haschild="true"]
+  > div
+  > .block-content-wrapper
+  .block-content.inline::before {
+  pointer-events: none;
+  content: "";
+  top: 16px;
+  bottom: 0;
+  left: -15px;
+  position: absolute;
+  border-left: var(--ls-block-bullet-threading-width) solid transparent;
+}
+.ls-block[haschild="true"]:focus-within
+  > div
+  > .block-content-wrapper
+  .block-content::before {
+  border-color: var(--ls-block-bullet-active-color);
+}
+/* disables first fracking level for embedded blocks */
+.embed-block > div > div > div > div > div > div > div.items-center::before {
+  border-color: transparent !important;
+}
+
+/* Disable for doc mode */
+.doc-mode div.items-center::before,
+.doc-mode div.items-center::after,
+.doc-mode .ls-block::before,
+.doc-mode .ls-block::after {
+  display: none;
+}
+
+/* ==={ 4. Plugin specific }=== */
+/* ={ Table of Contents Plugin }= */
 [id^="kef-toc"][id$="tocgen"]:not([id*="backtop"]) {
-  /* border: 1px solid var(--ls-secondary-background-color); */
   border-radius: 0.25rem;
   padding: 22px 44px 22px 22px;
-  /* margin-left: -22px; */
   background-color: var(--ls-quaternary-background-color);
+  /* margin-left: -22px; */
+  /* border: 1px solid var(--ls-secondary-background-color); */
 }
 html[data-theme="light"][id^="kef-toc"][id$="tocgen"]:not([id*="backtop"]) {
   background-color: rgba(128, 128, 128, 0.0675);
@@ -660,24 +669,24 @@ html[data-theme="light"][id^="kef-toc"][id$="tocgen"]:not([id*="backtop"]) {
 /* .kef-tocgen-block > button.kef-tocgen-arrow {
   position: absolute;
   margin-left: -35px;
-} */
+}= */
 /* .kef-tocgen-block > button.kef-tocgen-arrow svg {
   opacity: 0;
 }
 .kef-tocgen-block:hover > button.kef-tocgen-arrow svg {
   opacity: 1;
-} */
+}= */
 /* .kef-tocgen-block {
   display: list-item;
   margin-left: 15px;
-} */
+}= */
 /* .kef-tocgen-block::marker {
  color: var(--ls-quaternary-background-color);
-} */
+}= */
 
-/* { Tabs Plugin } */
+/* ={ Tabs Plugin }= */
 #main-content-container {
-  margin-top: 30px;
+  margin-top: 1.9em;
 }
 .lsp-iframe-sandbox-container {
   width: 100% !important;

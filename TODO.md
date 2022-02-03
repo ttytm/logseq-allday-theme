@@ -9,15 +9,17 @@
 - [x] `🤓` Fix bullet threading for embed blocks
 - [x] `🧐` Border left bug for inline elements
 - ~~Re-add border-left fix for compatibility<0.5.9~~
-  - <sup>_Due to breaking changes in program version → not possible to add version logseq version specific CSS to support older versions._</sup>
+  - <sup>_Due to breaking changes in logseq's releases → not possible to add version specific CSS to support versions\<0.5.9 using one only one branch with one release version._</sup>
+
+---
 
 **`B`**
 
 - [x] `😌` Add rounded borders to codeblocks, quotes etc. for style consistency
-- [ ] `😌` Fix light theme colors
-  - [ ] PDF annotations page heading color
-  - [ ] PDF toolbar button colors
-  - [ ] Bullet fold hovers
+- [x] `😌` Fix light theme colors
+  - [x] PDF annotations page - heading color
+  - [x] PDF toolbar button colors
+  - [x] Bullet fold hovers
   - [x] Secondary-text-color
   - [x] Code color using single backticks \` \`
 - [x] `😌` Align codeblock lang
@@ -30,10 +32,14 @@
   - [ ] Add table of contents & better comments
 - [x] `😌` Button color for dark mode in delete dialog
 
+---
+
 **`C`**
 
 - [ ] `🤓` Update style in TODOs lists for style consistency
 - [ ] `🤓` Update icon
+
+---
 
 `Unsorted`
 
@@ -43,7 +49,7 @@
 - [x] Horizontal line color
 - [x] Light theme menu button color
 - [x] Improve spacing on level one elements
-  - _E.g. making some quick notes using only level-one items without further formatting and children, spacing between items is too large._
+  - _E.g. making some quick notes using only level-one items without further formatting and indenting, the spacing between items is too large._
 
 ---
 
@@ -53,15 +59,11 @@ Estimated difficulty / time required: Low `😌` | Medium `🤓` | High `🧐`
 
 <!-- Alternative: Low `🤙` | Medium `👌` | High `🤞` -->
 
-<sub>_Mental note:
-Make commits to `TODO.md` better comparable by not throwing them around - even though it can get unsorted and not that pretty (Trying to hold on to that lol).<br />
-→ Add new items and leave rest as it is._</sub>
-
 ---
 
 ## Plugin Support
 
-- [ ] Background color in marketplace previews<sup>(\*)</sup>
+- [ ] ~~Background color in marketplace previews<sup>(\*)</sup>~~
 - [x] Tabs<sup>(\*)</sup>
   - [x] Style
   - [ ] Release cross theme compatible fork
@@ -70,7 +72,7 @@ Make commits to `TODO.md` better comparable by not throwing them around - even t
 - [x] TOC Generator Plugin
   - [x] Light theme background
 
-<sub>_(\*)Marketplace previews and many plugins are implemented as iframe. Due to this the plugins miss implementation of Logseq's `styles.css` and themes `custom.css`. This makes it hardly possible to style those plugins directly with the themes CSS._</sub>
+<sub>_(\*)Marketplace previews and many plugins are implemented as iframe. Due to this the plugins miss implementation of Logseq's `styles.css`. Which makes it hardly possible to style those plugins inside it's iframe directly with the themes CSS._</sub>
 
 ---
 
