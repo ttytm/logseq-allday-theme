@@ -11,12 +11,15 @@ Which results in an initially good overview of the note content section and redu
 
 ## Instructions
 
-Switching between dark / light mode is possible under Settings→General.
+Switching between dark / light mode is possible under `Settings → General → Theme modes`.
 
-As the theme has implemented bullet threading, it can conflict with the
-bullet threading plugin. If you have installed the plugin, I'll recommend turning it off when using this theme.
+The theme's implemented bullet threading may be impaired when using the additional
+_Bullet Threading_ plugin on top of it. If you have installed the plugin, I'll recommend turning it off while using the theme.
 
-Due to changes in the recent versions of Loegseq, please upgrade to current version<sup>(0.5.9)</sup>. The themes styling for some elements needed to be adapted to work in the new version.
+To ensure the best functionality, please consider upgrading to Logseq v0.5.9+.
+Due to changes in the recent versions, the theme's styling for some elements needed to be adapted to work with the new release and can look displaced in older versions now.
+
+If you are upgrading from an old version of the All Day theme, clearing the cache can help if you are still experiencing issues like displacement of lines after an update `Settings → Advanced → Clear cache`. Note: After clearing the cache you need to reopen your graphs.
 
 ## Credits
 
