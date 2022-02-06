@@ -24,7 +24,7 @@
   - [x] Code color using single backticks \` \`
 - [x] `😌` Align codeblock lang
 - [x] `😌` PDF preview
-- [ ] `😌` Other visual hint then strike for finished todos
+- [x] `😌` Other visual hint then strike for finished todos
 - [x] Update `README.md`
   - [x] Add how to change color scheme
   - [x] Info to disable bullet threading plugin as it can conflict with integrated bt
@@ -36,7 +36,7 @@
 
 **`C`**
 
-- [ ] `🤓` Update style in TODOs lists for style consistency
+- ~~Update style in TODOs lists for style consistency~~
 - [ ] `🤓` Update icon
 
 ---
