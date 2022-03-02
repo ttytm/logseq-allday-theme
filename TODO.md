@@ -28,8 +28,8 @@
 - [x] Update `README.md`
   - [x] Add how to change color scheme
   - [x] Info to disable bullet threading plugin as it can conflict with integrated bt
-- [ ] `🧐` Cleanup, sort & refactor CSS!
-  - [ ] Add table of contents & better comments
+- [x] `🧐` Cleanup, sort & refactor CSS!
+  - [x] Add table of contents & better comments
 - [x] `😌` Button color for dark mode in delete dialog
 
 ---
@@ -37,7 +37,7 @@
 **`C`**
 
 - ~~Update style in TODOs lists for style consistency~~
-- [ ] `🤓` Update icon
+- [x] `🤓` Update icon
 
 ---
 
