@@ -421,10 +421,6 @@ html[data-theme="light"] .marker-switch {
 	opacity: 0.5;
 	text-shadow: none;
 }
-.extensions__code-lang {
-	background: var(--ls-secondary-background-color);
-	top: 4px;
-}
 .cm-s-solarized.cm-s-dark div.CodeMirror-selected {
 	background: var(--ls-selection-background-color);
 }
@@ -436,6 +432,16 @@ html[data-theme="light"] .marker-switch {
 }
 .CodeMirror-focused .CodeMirror-selected {
 	background: var(--ls-selection-background-color);
+}
+.CodeMirror-lines {
+  padding-right: 10px;
+}
+.extensions__code div.mt-6 {
+  margin-top: 0;
+}
+.extensions__code-lang {
+	background: var(--ls-secondary-background-color);
+	/* top: 4px; */
 }
 
 /* ==| 2.4. PDF Viewer |== */
@@ -611,4 +617,5 @@ html[data-theme="light"][id^="kef-toc"][id$="tocgen"]:not([id*="backtop"]) {
 /* .kef-tocgen-block::marker {
  color: var(--ls-quaternary-background-color);
 */
+
 
