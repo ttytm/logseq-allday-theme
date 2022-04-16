@@ -109,6 +109,10 @@ html[data-theme="light"],
   --ls-block-bullet-active-color: #86b6b6;
   --ls-block-bullet-border-color: rgba(128, 128, 128, 0.1);
 }
+/* Add some white space to the right as, subtracting the bullets and spacing, the real start of the content on the left is offset. */
+.cp__sidebar-main-content {
+  margin-right: 24px;
+}
 
 /* ==| 1.2. Typography |== */
 /* Headings */
