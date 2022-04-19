@@ -22,6 +22,10 @@
   --ls-font-family: "Roboto", sans-serif;
   font-size: 1.0375rem;
 }
+/* Add some white space to the right as, subtracting the bullets and spacing, the real start of the content on the left is offset. */
+.cp__sidebar-main-content {
+  margin-right: 24px;
+}
 
 /* ==| 1.1.Color Palette & Variables |== */
 /* Styles that apply to both dark & light mode (Could be merged further, but as it would become harder to implement changes afterwards and the theme is not 100% finished yet we'll leave it for now ...). */
@@ -108,10 +112,6 @@ html[data-theme="light"],
   --ls-scrollbar-thumb-hover-color: rgba(0, 0, 0, 0.3);
   --ls-block-bullet-active-color: #86b6b6;
   --ls-block-bullet-border-color: rgba(128, 128, 128, 0.1);
-}
-/* Add some white space to the right as, subtracting the bullets and spacing, the real start of the content on the left is offset. */
-.cp__sidebar-main-content {
-  margin-right: 24px;
 }
 
 /* ==| 1.2. Typography |== */
@@ -323,24 +323,24 @@ html[data-theme="light"] .search-results-wrap a .rounded.border {
 .form-checkbox {
   background-color: var(--ls-primary-background-color);
 }
-.dark-theme .form-checkbox {
+html[data-theme='dark'] .form-checkbox {
   border: 1px solid rgba(246, 246, 246, 0.5);
 }
-html[data-theme="light"] .form-checkbox {
+html[data-theme='light'] .form-checkbox {
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
-.dark-theme .form-checkbox:checked {
+html[data-theme='dark'] .form-checkbox:checked {
   border-color: rgba(246, 246, 246, 0.5);
   background-color: var(--ls-primary-background-color);
 }
-html[data-theme="light"].form-checkbox:checked {
+html[data-theme='light'].form-checkbox:checked {
   border-color: rgba(0, 0, 0, 0.5);
   background-color: var(--ls-link-text-color);
 }
-.dark-theme .form-checkbox:focus {
+html[data-theme='dark'] .form-checkbox:focus {
   border-color: rgba(246, 246, 246, 0.5);
 }
-.dark-theme .form-checkbox:checked:focus {
+html[data-theme='dark'] .form-checkbox:checked:focus {
   background-color: inherit;
   border-color: rgba(246, 246, 246, 0.5);
 }
