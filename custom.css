@@ -82,8 +82,6 @@ html[data-theme="light"] .left-sidebar-inner {
 	--ls-menu-hover-color: var(--ls-secondary-background-color);
 	--ls-slide-background-color: var(--ls-primary-background-color);
 	--ls-block-highlight-color: rgba(246, 246, 246, 0.1);
-	--ls-page-checkbox-color: rgba(246, 246, 246, 0.1);
-	--ls-page-checkbox-border-color: var(--ls-primary-text-color);
 	--ls-page-inline-code-bg-color: rgba(246, 246, 246, 0.2);
 	--ls-scrollbar-foreground-color: rgba(246, 246, 246, 0.15);
 	--ls-scrollbar-thumb-hover-color: rgba(246, 246, 246, 0.3);
@@ -332,52 +330,43 @@ html[data-theme="light"] .search-results-wrap a .rounded.border {
 /* Checkboxes */
 .form-checkbox {
 	background-color: var(--ls-primary-background-color);
-}
-html[data-theme="dark"] .form-checkbox {
-	border: 1px solid rgba(246, 246, 246, 0.5);
-}
-html[data-theme="light"] .form-checkbox {
-	border: 1px solid rgba(0, 0, 0, 0.5);
-}
-html[data-theme="dark"] .form-checkbox:checked {
-	border-color: rgba(246, 246, 246, 0.5);
-	background-color: var(--ls-primary-background-color);
-}
-html[data-theme="light"].form-checkbox:checked {
-	border-color: rgba(0, 0, 0, 0.5);
-	background-color: var(--ls-link-text-color);
-}
-html[data-theme="dark"] .form-checkbox:focus {
-	border-color: rgba(246, 246, 246, 0.5);
-}
-html[data-theme="dark"] .form-checkbox:checked:focus {
-	border-color: rgba(246, 246, 246, 0.5);
-	background-color: inherit;
+	height: 0.95em;
+	width: 0.95em;
+	opacity: 0.75;
+	border: 1px solid var(--ls-secondary-text-color);
 }
 .form-checkbox:hover {
-	transform: scale(1.2);
+	transform: none;
+	opacity: 0.9;
+	background-color: var(--ls-secondary-background-color);
+}
+[data-theme="dark"] .form-checkbox:hover {
+	border-color: var(--ls-link-text-color);
+}
+.form-checkbox:checked {
+	border-color: var(--ls-secondary-text-color);
 }
 /* Status Marker */
 .marker-switch {
-	display: inline-block;
+	font-size: 0.75rem;
 	margin-right: 6px;
 	margin-left: 2px;
-	padding: 0.1rem 0.25rem 0.1rem 0.25rem;
-	height: 15px;
-	border: 1px solid;
 	border-radius: 0;
-	text-align: center;
 	font-weight: 500;
-	font-size: 0.75rem;
-	line-height: 1;
+	display: inline-block;
+	text-align: center;
+	height: 15px;
 	opacity: 1;
+	padding: 0.1rem 0.25rem 0.1rem 0.25rem;
+	border: 1px solid;
+	line-height: 1;
 	cursor: pointer;
+	color: var(--ls-secondary-text-color);
+	opacity: 0.75;
 }
-.dark-theme .marker-switch {
-	color: rgba(246, 246, 246, 0.5);
-}
-html[data-theme="light"] .marker-switch {
-	color: rgba(0, 0, 0, 0.5);
+.marker-switch:hover {
+	color: var(--ls-link-text-color);
+	opacity: 0.9;
 }
 .canceled,
 .done {
