@@ -16,7 +16,7 @@
   4.2. Table of Contents
 <== }}} */
 
-/* {{{ 1. Global ==> */
+/* { == 1. Global ==> */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
 :root {
@@ -163,7 +163,7 @@
 .cp__themes-installed > .it > section > strong {
 	font-size: 0.875em;
 }
-/* <== }}} */
+/* }} */
 
 /* {{ 1.4. Links & Buttons */
 [data-theme="light"] .cp__header a,
@@ -300,7 +300,7 @@ mark .page-reference .bracket {
 }
 /* <== }}} */
 
-/* {{{ 2. Page Components ==> */
+/* { == 2. Page Components ==> */
 
 /* {{ 2.1. Content Blocks */
 .block-body ul > li {
@@ -470,7 +470,7 @@ mark .page-reference .bracket {
 }
 /* <== }}} */
 
-/* {{{ 3. Bullet Threading */
+/* { == 3. Bullet Threading ==> */
 .block-control,
 .block-control:hover {
 	min-width: 0;
@@ -581,9 +581,9 @@ mark .page-reference .bracket {
 .doc-mode .ls-block::after {
 	display: none;
 }
-/* <== }}} */
+/* <== } */
 
-/* {{{ 4. Plugin specific ==> */
+/* { == 4. Plugin specific ==> */
 
 /* {{ 4.2. Tabs Plugin */
 #main-content-container {
