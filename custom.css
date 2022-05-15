@@ -15,19 +15,21 @@
   4.2. Table of Contents
 <== */
 
-/* ===| 1. Global |=== */
+/* {{{ 1. Global ==> */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
 :root {
-	--ls-font-family: "Roboto", sans-serif;
 	font-size: 1.0375rem;
+
+	--ls-font-family: "Roboto", sans-serif;
 }
+
 /* Add some white space to the right as, subtracting the bullets and spacing, the real start of the content on the left is offset. */
 .cp__sidebar-main-content {
 	margin-right: 24px;
 }
 
-/* ==| 1.1.Color Palette & Variables |== */
+/* {{ 1.1.Color Palette & Variables */
 /* Styles that apply to both dark & light mode (Could be merged further, but as it would become harder to implement changes afterwards and the theme is not 100% finished yet we'll leave it for now ...). */
 html[data-theme="dark"],
 .dark-theme,
@@ -113,14 +115,15 @@ html[data-theme="light"],
 	--ls-block-bullet-active-color: #86b6b6;
 	--ls-block-bullet-border-color: rgba(128, 128, 128, 0.1);
 }
+/* }} */
 
-/* ==| 1.2. Typography |== */
+/* {{ 1.2. Typography */
 /* Headings */
 .editor-inner .uniline-block:is(.h1, .h2, .h3, .h4, .h5, .h6),
 .editor-inner :is(.h1, .h2, .h3, .h4, .h5, .h6),
 .ls-block :is(h1, h2, h3, h4, h5, h6) {
-	margin: 0;
 	position: relative;
+	margin: 0;
 }
 .editor-inner .uniline-block:is(.h1),
 .editor-inner :is(.h1),
@@ -155,8 +158,9 @@ html[data-theme="light"],
 .cp__themes-installed > .it > section > strong {
 	font-size: 0.875em;
 }
+/* <== }}} */
 
-/* ==| 1.3. Links & Buttons |== */
+/* {{ 1.3. Links & Buttons */
 html[data-theme="light"] .cp__header a,
 html[data-theme="light"] .extensions__pdf-toolbar > .inner > .r a,
 html[data-theme="light"] a svg {
@@ -166,21 +170,25 @@ html[data-theme="light"] h1 a {
 	color: var(--ls-title-text-color);
 }
 html[data-theme="light"] a:hover {
-	color: var(--ls-primary-text-color);
 	background-color: var(--ls-quaternary-background-color);
+	color: var(--ls-primary-text-color);
 }
 /* External Links */
 a.external-link {
 	border-bottom: 1px dashed;
 }
 a.external-link:after {
-	background-color: var(--ls-link-text-color);
+	position: relative;
 	bottom: -2px;
-	content: "";
-	display: inline-block;
-	height: 14px;
 	left: -1px;
+	display: inline-block;
 	margin: 0 1px 0 5px;
+	width: 14px;
+	height: 14px;
+	background-color: var(--ls-link-text-color);
+	content: "";
+	transition: 0.3s;
+
 	mask-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGDSURBVHgBtZaNcYMwDIUfGzgbqBuUDcwkaTdoJ4AN0gmaTNJu0GyQdILSCUjRIa6yMT+x4d29O7CNPmMLmQzryYhZ39hIDChbX1vflPn+2JqwoigA8t20fsEKogCslrZ6C6iG/UhAo/qLwBhCpCzc2T+OjNu1PquxB0TqpIK8e33k3Rdw3zJKnyqIVe2VtF1UW4b/PW0QuawaaDyYH5iBVyQCSQA2ALvJPRRQT8QgUdUEjPWs+r6QqHIGlsPdv/1UMIuuNJ3Fh4UwI8+WcAvAZQxEcJNCm2ZgOYZVpodRCPaAYblqxP0MK4wv42sA9oGJzPRLEQez8oDBfILwhHl1eAuOcL/RgZ48mF+uqhnY3dI1b781zHgBl8AKuSZEiOCe1KF2P/V1UiQBa6+Ps7OBu4w2FQi4308RmJDWCePH02K9qSCcQLuRcTncZbaIFKH7HPRe8ptmYp4A/0bUCO93lDhgg2U/RqPlag3o4toYK0JXmvoM1fW0QuIhmmEezvoVJ+sPourrpWEel2gAAAAASUVORK5CYII=");
 	-webkit-mask-box-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGDSURBVHgBtZaNcYMwDIUfGzgbqBuUDcwkaTdoJ4AN0gmaTNJu0GyQdILSCUjRIa6yMT+x4d29O7CNPmMLmQzryYhZ39hIDChbX1vflPn+2JqwoigA8t20fsEKogCslrZ6C6iG/UhAo/qLwBhCpCzc2T+OjNu1PquxB0TqpIK8e33k3Rdw3zJKnyqIVe2VtF1UW4b/PW0QuawaaDyYH5iBVyQCSQA2ALvJPRRQT8QgUdUEjPWs+r6QqHIGlsPdv/1UMIuuNJ3Fh4UwI8+WcAvAZQxEcJNCm2ZgOYZVpodRCPaAYblqxP0MK4wv42sA9oGJzPRLEQez8oDBfILwhHl1eAuOcL/RgZ48mF+uqhnY3dI1b781zHgBl8AKuSZEiOCe1KF2P/V1UiQBa6+Ps7OBu4w2FQi4308RmJDWCePH02K9qSCcQLuRcTncZbaIFKH7HPRe8ptmYp4A/0bUCO93lDhgg2U/RqPlag3o4toYK0JXmvoM1fW0QuIhmmEezvoVJ+sPourrpWEel2gAAAAASUVORK5CYII=");
 	mask-position: center;
@@ -190,9 +198,6 @@ a.external-link:after {
 	mask-size: 14px 14px;
 	-webkit-mask-box-size: 14px 14px;
 	object-fit: cover;
-	position: relative;
-	transition: 0.3s;
-	width: 14px;
 }
 a.external-link:hover:after {
 	background-color: var(--ls-link-text-hover-color);
@@ -207,8 +212,8 @@ a.external-link:hover:after {
 	background-color: var(--ls-primary-text-color);
 }
 .dark-theme button.bg-white {
-	background-color: var(--ls-secondary-background-color);
 	border-color: var(--ls-block-bullet-border-color);
+	background-color: var(--ls-secondary-background-color);
 	color: var(--ls-secondary-text-color);
 }
 .dark-theme button.bg-white:hover {
@@ -237,41 +242,41 @@ a.external-link:hover:after {
 }
 /* block references link count mark */
 a.open-block-ref-link {
-	color: var(--ls-primary-background-color);
 	background-color: var(--ls-link-text-color);
+	color: var(--ls-primary-background-color);
 }
 /* brackets in links */
 .page-reference .bracket {
-	opacity: 0.5;
 	color: var(--ls-link-text-color);
+	opacity: 0.5;
 }
 /* Tags */
 a.tag[data-ref] {
-	color: var(--ls-primary-background-color);
-	background: var(--ls-link-text-color);
-	border-radius: 0.5rem 0rem;
-	font-size: 0.75rem;
-	font-weight: bold;
-	letter-spacing: 0.05em;
-	line-height: 0.75rem;
 	padding: 0.2rem 0.3rem;
-	transition: 0.3s;
+	border-radius: 0.5rem 0rem;
+	background: var(--ls-link-text-color);
+	color: var(--ls-primary-background-color);
 	white-space: nowrap;
+	letter-spacing: 0.05em;
+	font-weight: bold;
+	font-size: 0.75rem;
+	line-height: 0.75rem;
+	transition: 0.3s;
 }
 html[data-theme="light"] a.tag[data-ref] {
 	background-color: rgba(var(--ls-accent-rgb), 0.66);
 }
 a.tag[data-ref]:hover {
-	opacity: 1;
-	background-color: var(--ls-link-text-hover-color);
 	border-radius: 0rem 0.5rem;
+	background-color: var(--ls-link-text-hover-color);
+	opacity: 1;
 }
 /* Highlights */
 mark {
-	background: rgba(246, 246, 246, 0.8);
-	color: var(--ls-primary-background-color);
 	padding: 2px 4px;
 	border-radius: 3px;
+	background: rgba(246, 246, 246, 0.8);
+	color: var(--ls-primary-background-color);
 	font-size: 14px;
 }
 html[data-theme="light"] mark {
@@ -285,13 +290,14 @@ mark .page-reference .bracket {
 }
 /* Search results */
 html[data-theme="light"] .search-results-wrap a .rounded.border {
-	background-color: var(--ls-primary-background-color);
 	border-color: var(--ls-tertiary-background-color);
+	background-color: var(--ls-primary-background-color);
 }
+/* <== }}} */
 
-/* ===| 2. Page Components |=== */
+/* {{{ 2. Page Components ==> */
 
-/* ==| 2.1. Content Blocks |==  */
+/* {{ 2.1. Content Blocks */
 .block-body ul > li {
 	margin: 0.5em 0;
 }
@@ -313,8 +319,9 @@ html[data-theme="light"] .search-results-wrap a .rounded.border {
 #lazy-blocks > div .ls-block[haschild="true"] > div > .block-content-wrapper::before {
 	top: 0.9rem;
 }
+/* }} */
 
-/* ==| 2.2. Tasks |== */
+/* {{ 2.2. Tasks */
 /* Checkboxes */
 .form-checkbox {
 	background-color: var(--ls-primary-background-color);
@@ -337,26 +344,26 @@ html[data-theme="dark"] .form-checkbox:focus {
 	border-color: rgba(246, 246, 246, 0.5);
 }
 html[data-theme="dark"] .form-checkbox:checked:focus {
-	background-color: inherit;
 	border-color: rgba(246, 246, 246, 0.5);
+	background-color: inherit;
 }
 .form-checkbox:hover {
 	transform: scale(1.2);
 }
 /* Status Marker */
 .marker-switch {
-	font-size: 0.75rem;
+	display: inline-block;
 	margin-right: 6px;
 	margin-left: 2px;
-	border-radius: 0;
-	font-weight: 500;
-	display: inline-block;
-	text-align: center;
-	height: 15px;
-	opacity: 1;
 	padding: 0.1rem 0.25rem 0.1rem 0.25rem;
+	height: 15px;
 	border: 1px solid;
+	border-radius: 0;
+	text-align: center;
+	font-weight: 500;
+	font-size: 0.75rem;
 	line-height: 1;
+	opacity: 1;
 	cursor: pointer;
 }
 .dark-theme .marker-switch {
@@ -372,13 +379,13 @@ html[data-theme="light"] .marker-switch {
 .done {
 	text-decoration: none;
 }
-
-/* Filters ? */
+/* Filters? Forgot which component this is targeting. */
 .filters button:focus {
 	outline: none;
 }
+/* }} */
 
-/* ==| 2.3. Code |== */
+/* {{ 2.3. Code */
 /* Inline code */
 :not(pre) > code {
 	padding: 2px 5px !important;
@@ -390,10 +397,10 @@ html[data-theme="light"] .marker-switch {
 }
 /* CodeMirror */
 .extensions__code > .CodeMirror {
+	border-radius: 0.25rem;
+	background: var(--ls-secondary-background-color);
 	font-family: "Fira Code", monospace;
 	line-height: 1.2;
-	background: var(--ls-secondary-background-color);
-	border-radius: 0.25rem;
 }
 .CodeMirror-hscrollbar {
 	cursor: default;
@@ -401,9 +408,9 @@ html[data-theme="light"] .marker-switch {
 .cm-s-solarized.cm-s-dark,
 .cm-s-solarized.cm-s-white,
 .cm-s-solarized.cm-s-light {
-	color: var(--ls-primary-text-color);
-	background-color: var(--ls-primary-background-color);
 	border: 7px solid var(--ls-secondary-background-color);
+	background-color: var(--ls-primary-background-color);
+	color: var(--ls-primary-text-color);
 	text-shadow: none;
 }
 .CodeMirror-gutters {
@@ -417,13 +424,13 @@ html[data-theme="light"] .marker-switch {
 }
 .CodeMirror-linenumber {
 	color: var(--ls-primary-text-color);
-	opacity: 0.5;
 	text-shadow: none;
+	opacity: 0.5;
 }
 .cm-s-solarized.cm-s-dark .CodeMirror-linenumber {
 	color: var(--ls-primary-text-color);
-	opacity: 0.5;
 	text-shadow: none;
+	opacity: 0.5;
 }
 .cm-s-solarized.cm-s-dark div.CodeMirror-selected {
 	background: var(--ls-selection-background-color);
@@ -447,8 +454,9 @@ html[data-theme="light"] .marker-switch {
 	background: var(--ls-secondary-background-color);
 	/* top: 4px; */
 }
+/* }} */
 
-/* ==| 2.4. PDF Viewer |== */
+/* {{ 2.4. PDF Viewer */
 #pdf-layout-container[data-theme="dark"],
 #pdf-layout-container[data-theme="light"] {
 	background-color: var(--ls-quaternary-background-color);
@@ -463,17 +471,18 @@ html[data-theme="light"] .marker-switch {
 #pdf-layout-container[data-theme="light"] .extensions__pdf-toolbar {
 	background: linear-gradient(0deg, rgba(255, 255, 255, 0) 10%, var(--ls-primary-background-color) 100%);
 }
+/* <== }}} */
 
-/* ==| 3.1. Bullet Threading |== */
+/* {{{ 3. Bullet Threading */
 .block-control,
 .block-control:hover {
+	min-width: 0;
 	/* Some bug going on here to make the left border highlight cross device compatible. Assigning this "wired" width seems to solve it */
 	width: 1.551em;
-	min-width: 0;
 }
 .block-children {
-	border-left-width: var(--ls-block-bullet-threading-width);
 	border-color: var(--ls-quaternary-background-color);
+	border-left-width: var(--ls-block-bullet-threading-width);
 	border-radius: 0;
 }
 .block-children-left-border:hover {
@@ -483,9 +492,9 @@ html[data-theme="light"] .marker-switch {
 	position: relative;
 }
 .bullet-container {
-	height: 14px !important;
-	width: 14px !important;
 	position: relative;
+	width: 14px !important;
+	height: 14px !important;
 	transform: translate(1px, -1px);
 	/* align-items: end; */
 }
@@ -502,35 +511,35 @@ html[data-theme="light"] .marker-switch {
 }
 .ls-block:not(:focus-within) .bullet {
 	background-color: var(--ls-block-bullet-color);
-	transform: scale(1);
 	box-shadow: none;
+	transform: scale(1);
 }
 .ls-block:not(:focus-within) > .items-baseline {
 	align-items: baseline;
 }
 .ls-block .ls-block > div > div.items-center::before {
-	pointer-events: none;
-	content: "";
-	left: calc(var(--ls-block-bullet-threading-width) * -1);
-	right: 6px;
-	top: calc(-100% + var(--ls-block-bullet-threading-width) * 0.5 - 1px);
-	bottom: 50%;
 	position: absolute;
-	border-left: var(--ls-block-bullet-threading-width) solid transparent;
+	top: calc(-100% + var(--ls-block-bullet-threading-width) * 0.5 - 1px);
+	right: 6px;
+	bottom: 50%;
+	left: calc(var(--ls-block-bullet-threading-width) * -1);
 	border-bottom: var(--ls-block-bullet-threading-width) solid transparent;
+	border-left: var(--ls-block-bullet-threading-width) solid transparent;
 	border-bottom-left-radius: 6px;
+	content: "";
+	pointer-events: none;
 }
 .ls-block .ls-block:focus-within > div > div.items-center::before {
 	border-color: var(--ls-block-bullet-active-color);
 }
 .ls-block .block-children > .ls-block::before {
-	pointer-events: none;
-	content: "";
+	position: absolute;
 	top: -1.19em;
 	bottom: 0;
-	border-left: var(--ls-block-bullet-threading-width) solid transparent;
 	left: calc(var(--ls-block-bullet-threading-width) * -1);
-	position: absolute;
+	border-left: var(--ls-block-bullet-threading-width) solid transparent;
+	content: "";
+	pointer-events: none;
 }
 .ls-block .block-children:focus-within > .ls-block:not(:focus-within)::before {
 	border-color: var(--ls-block-bullet-active-color);
@@ -539,22 +548,22 @@ html[data-theme="light"] .marker-switch {
 	border-color: transparent;
 }
 .ls-block[haschild="true"] > div > .block-content-wrapper::before {
-	pointer-events: none;
-	content: "";
+	position: absolute;
 	top: 12px;
 	bottom: 0;
 	left: -15px;
-	position: absolute;
 	border-left: var(--ls-block-bullet-threading-width) solid transparent;
+	content: "";
+	pointer-events: none;
 }
 .ls-block[haschild="true"] > div > .block-content-wrapper .block-content.inline::before {
-	pointer-events: none;
-	content: "";
+	position: absolute;
 	top: 0.9rem;
 	bottom: 0;
 	left: -15px;
-	position: absolute;
 	border-left: var(--ls-block-bullet-threading-width) solid transparent;
+	content: "";
+	pointer-events: none;
 }
 .ls-block[haschild="true"]:focus-within > div > .block-content-wrapper .block-content::before {
 	border-color: var(--ls-block-bullet-active-color);
@@ -575,10 +584,11 @@ html[data-theme="light"] .marker-switch {
 .doc-mode .ls-block::after {
 	display: none;
 }
+/* <== }}} */
 
-/* ===| 4. Plugin specific |=== */
+/* {{{ 4. Plugin specific ==> */
 
-/* ==| 4.2. Tabs Plugin |== */
+/* {{ 4.2. Tabs Plugin */
 #main-content-container {
 	margin-top: 1.9em;
 }
@@ -589,11 +599,12 @@ html[data-theme="light"] .marker-switch {
 .logseq-tab[data-active="true"] {
 	background-color: var(--ls-quaternary-background-color) !important;
 }
+/* }} */
 
-/* ==| 4.1. Table of Contents Plugin |== */
+/* {{ 4.1. Table of Contents Plugin */
 [id^="kef-toc"][id$="tocgen"]:not([id*="backtop"]) {
-	border-radius: 0.25rem;
 	padding: 22px 44px 22px 22px;
+	border-radius: 0.25rem;
 	background-color: var(--ls-quaternary-background-color);
 	/* margin-left: -22px; */
 	/* border: 1px solid var(--ls-secondary-background-color); */
@@ -601,32 +612,4 @@ html[data-theme="light"] .marker-switch {
 html[data-theme="light"][id^="kef-toc"][id$="tocgen"]:not([id*="backtop"]) {
 	background-color: rgba(128, 128, 128, 0.0675);
 }
-
-/* attempt to add loqseq native like bullet styles, but parent CSS conflicts */
-/* .kef-tocgen-block > button.kef-tocgen-arrow {
-  position: absolute;
-  margin-left: -35px;
-*/
-/* .kef-tocgen-block > button.kef-tocgen-arrow svg {
-  opacity: 0;
-}
-.kef-tocgen-block:hover > button.kef-tocgen-arrow svg {
-  opacity: 1;
-*/
-/* .kef-tocgen-block {
-  display: list-item;
-  margin-left: 15px;
-*/
-/* .kef-tocgen-block::marker {
- color: var(--ls-quaternary-background-color);
-*/
-
-/* attempt to get smooth cursor movement 
-.CodeMirror-cursor {
-  transition: all 100ms !important;
-  background-color: red;
-}
-.cursor-pointer,
-.cursor {
-  transition: all 100ms !important;
-} */
+/* <== }}} */
