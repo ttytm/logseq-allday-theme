@@ -657,6 +657,6 @@ button.kef-tocgen-arrow svg[style*="transform"] {
 	filter: none;
 }
 button.kef-tocgen-arrow:hover svg[style*="transform"] {
-	color: rgba(178, 219, 219, 0.5);
+	color: var(--ls-link-text-color);
 }
 /* <== }}} */
