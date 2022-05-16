@@ -1,16 +1,16 @@
 {
-  "name": "logseq-allday-theme",
-  "author": "Turiiya",
-  "version": "1.0.6",
-  "description": "A clean productivity theme. Styled for high readability and minimal eye strain.",
-  "logseq": {
-    "themes": [
-      {
-        "name": "All Day Theme",
-        "url": "./custom.css"
-      }
-    ],
-    "id": "logseq-allday-theme",
-    "icon": "./icon.png"
-  }
+	"name": "logseq-allday-theme",
+	"author": "Turiiya",
+	"version": "1.1.0",
+	"description": "A clean productivity theme. Styled for high readability and minimal eye strain.",
+	"logseq": {
+		"themes": [
+			{
+				"name": "All Day Theme",
+				"url": "./custom.css"
+			}
+		],
+		"id": "logseq-allday-theme",
+		"icon": "./icon.png"
+	}
 }
