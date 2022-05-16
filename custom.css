@@ -277,7 +277,6 @@ a.tag[data-ref] {
 }
 a.tag[data-ref]:hover {
 	border-radius: 0rem 0.5rem;
-	background-color: var(--ls-link-text-hover-color);
 	opacity: 1;
 }
 /* Highlights */
