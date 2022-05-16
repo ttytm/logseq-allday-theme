@@ -614,8 +614,8 @@ mark .page-reference .bracket {
 .kef-tocgen-block:before {
 	position: relative;
 	top: 0.7em;
-	left: 0.25em;
-	z-index: 2;
+	left: 0.5em;
+	z-index: 1;
 	display: inline-block;
 	width: 0.375em;
 	height: 0.4em;
@@ -625,20 +625,19 @@ mark .page-reference .bracket {
 	pointer-events: none;
 }
 [data-ref="logseq-tocgen"] .kef-tocgen-block-children {
-	margin-left: 1em;
+	margin-left: 1.2em;
 }
 button.kef-tocgen-arrow {
 	position: relative;
-	z-index: 1;
 	margin: 0;
-	margin-left: -1em;
+	margin-left: -0.75em;
 	padding: 0;
 	padding-left: 1.2em;
 }
 button.kef-tocgen-arrow svg {
 	position: relative;
 	top: 0.05em;
-	left: -0.54em;
+	left: -0.53em;
 	width: 0.8em;
 	height: 0.8em;
 	border-radius: 50%;
@@ -647,17 +646,17 @@ button.kef-tocgen-arrow svg {
 }
 .kef-tocgen-page button.kef-tocgen-arrow svg {
 	top: -0.095em;
-	left: -0.52em;
+	left: -0.54em;
 }
 button.kef-tocgen-arrow svg[style*="transform"] {
-	left: -1.5em;
-	margin-right: 0.14em;
-	width: 0.66em;
-	height: 0.66em;
+	left: -1.2em;
+	margin-right: 0.3em;
+	width: 0.5em;
+	height: 0.5em;
 	background-color: transparent;
 	filter: none;
 }
 button.kef-tocgen-arrow:hover svg[style*="transform"] {
-	color: var(--ls-link-text-color);
+	color: rgba(178, 219, 219, 0.5);
 }
 /* <== }}} */
