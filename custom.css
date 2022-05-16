@@ -58,7 +58,7 @@
 	--ls-page-inline-code-color: var(--ls-primary-text-color);
 	--ls-block-bullet-color: var(--ls-quaternary-background-color);
 	--ls-block-bullet-active-color: var(--ls-link-text-color);
-	--ls-block-bullet-threading-width: 1.5px;
+	--ls-block-bullet-threading-width: 0.1em;
 	--ls-bullet-closed-color: var(--ls-secondary-text-color);
 }
 /*  Dark theme & Light themes left sidebar  */
@@ -86,7 +86,7 @@
 	--ls-scrollbar-foreground-color: rgba(246, 246, 246, 0.15);
 	--ls-scrollbar-thumb-hover-color: rgba(246, 246, 246, 0.3);
 	--ls-right-sidebar-code-bg-color: var(--ls-page-inline-code-bg-color);
-	--ls-block-bullet-border-color: rgba(246, 246, 246, 0.25);
+	--ls-block-bullet-border-color: rgba(246, 246, 246, 0.15);
 }
 /* Light theme */
 [data-theme="light"],
@@ -136,8 +136,12 @@
 	top: 0.15em;
 	margin: -0.15em 0 0.15em;
 }
+.editor-inner .uniline-block:is(.h2),
+.editor-inner :is(.h2),
 .ls-block :is(h2) {
-	top: -0.15em;
+	top: -0.1em;
+	/* positive margin leaves a gap between bullet and indentation lines */
+	/* margin: 0.25em 0 0; */
 }
 .editor-inner .uniline-block:is(.h3, .h4, .h5, .h6),
 .editor-inner :is(.h3, .h4, .h5, .h6),
@@ -301,7 +305,6 @@ mark .page-reference .bracket {
 /* <== }}} */
 
 /* { == 2. Page Components ==> */
-
 /* {{ 2.1. Content Blocks */
 .block-body ul > li {
 	margin: 0.5em 0;
@@ -314,6 +317,9 @@ mark .page-reference .bracket {
 }
 .ls-block {
 	padding: 0.3em 0;
+}
+.ls-block[level="1"] {
+	padding-top: 0.6em;
 }
 .block-children {
 	padding: 0.16em 0;
@@ -329,41 +335,41 @@ mark .page-reference .bracket {
 /* {{ 2.2. Tasks */
 /* Checkboxes */
 .form-checkbox {
-	background-color: var(--ls-primary-background-color);
-	height: 0.95em;
 	width: 0.95em;
-	opacity: 0.75;
+	height: 0.95em;
 	border: 1px solid var(--ls-secondary-text-color);
+	background-color: var(--ls-primary-background-color);
+	opacity: 0.75;
 }
 .form-checkbox:hover {
-	transform: none;
-	opacity: 0.9;
 	background-color: var(--ls-secondary-background-color);
+	opacity: 0.9;
+	transform: none;
 }
 [data-theme="dark"] .form-checkbox:hover {
 	border-color: var(--ls-link-text-color);
 }
 .form-checkbox:checked {
-	background-color: var(--ls-secondary-background-color);
 	border-color: var(--ls-secondary-text-color);
+	background-color: var(--ls-secondary-background-color);
 }
 /* Status Marker */
 .marker-switch {
-	font-size: 0.75rem;
+	display: inline-block;
 	margin-right: 6px;
 	margin-left: 2px;
-	border-radius: 0;
-	font-weight: 500;
-	display: inline-block;
-	text-align: center;
-	height: 15px;
-	opacity: 1;
 	padding: 0.1rem 0.25rem 0.1rem 0.25rem;
+	height: 15px;
 	border: 1px solid;
-	line-height: 1;
-	cursor: pointer;
+	border-radius: 0;
 	color: var(--ls-secondary-text-color);
+	text-align: center;
+	font-weight: 500;
+	font-size: 0.75rem;
+	line-height: 1;
+	opacity: 1;
 	opacity: 0.75;
+	cursor: pointer;
 }
 .marker-switch:hover {
 	color: var(--ls-link-text-color);
@@ -504,7 +510,7 @@ mark .page-reference .bracket {
 	position: relative;
 }
 .ls-block > .items-baseline {
-	align-items: baseline;
+	align-items: center;
 }
 .ls-block:not(:focus-within) .bullet {
 	background-color: var(--ls-block-bullet-color);
@@ -512,11 +518,11 @@ mark .page-reference .bracket {
 	transform: scale(1);
 }
 .ls-block:not(:focus-within) > .items-baseline {
-	align-items: baseline;
+	align-items: center;
 }
 .ls-block .ls-block > div > div.items-center::before {
 	position: absolute;
-	top: calc(-100% + var(--ls-block-bullet-threading-width) * 0.5 - 1px);
+	top: calc(-100% + var(--ls-block-bullet-threading-width) * 0.5 - 0.1em);
 	right: 6px;
 	bottom: 50%;
 	left: calc(var(--ls-block-bullet-threading-width) * -1);
@@ -546,7 +552,7 @@ mark .page-reference .bracket {
 }
 .ls-block[haschild="true"] > div > .block-content-wrapper::before {
 	position: absolute;
-	top: 12px;
+	top: 0.9em;
 	bottom: 0;
 	left: -15px;
 	border-left: var(--ls-block-bullet-threading-width) solid transparent;
@@ -555,7 +561,7 @@ mark .page-reference .bracket {
 }
 .ls-block[haschild="true"] > div > .block-content-wrapper .block-content.inline::before {
 	position: absolute;
-	top: 0.9rem;
+	top: 0.9em;
 	bottom: 0;
 	left: -15px;
 	border-left: var(--ls-block-bullet-threading-width) solid transparent;
@@ -581,7 +587,7 @@ mark .page-reference .bracket {
 .doc-mode .ls-block::after {
 	display: none;
 }
-/* <== } */
+/* <== }}} */
 
 /* { == 4. Plugin specific ==> */
 /* {{ 4.1. Tabs Plugin */
