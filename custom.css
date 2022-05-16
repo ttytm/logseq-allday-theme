@@ -25,20 +25,20 @@
 
 /* {{ 1.1.Color Palette & Variables */
 /* Styles that apply to both dark & light mode */
-[data-theme="dark"],
+html[data-theme="dark"],
 .dark-theme,
-[data-theme="light"],
+html[data-theme="light"],
 .white-theme {
 	--ls-font-family: "Roboto", sans-serif;
 	--ls-main-content-max-width: 860px;
 	--ls-page-text-size: 1em;
+	--ls-page-title-size: 2rem;
 	--ls-link-ref-text-color: var(--ls-link-text-color);
 	--ls-link-ref-text-hover-color: var(--ls-link-text-hover-color);
 	--ls-head-text-color: var(--ls-link-text-color);
 	--ls-title-text-color: var(--ls-primary-text-color);
 	--ls-tag-text-color: var(--ls-link-text-color);
 	--ls-tag-text-hover-color: var(--ls-link-text-hover-color);
-	--ls-page-title-size: 2rem;
 	--ls-search-background-color: var(--ls-secondary-background-color);
 	--ls-border-color: var(--ls-quaternary-background-color);
 	--ls-secondary-border-color: var(--ls-secondary-text-color);
@@ -62,9 +62,9 @@
 	--ls-bullet-closed-color: var(--ls-secondary-text-color);
 }
 /*  Dark theme & Light themes left sidebar  */
-[data-theme="dark"],
+html[data-theme="dark"],
 .dark-theme,
-[data-theme="light"] .left-sidebar-inner {
+html[data-theme="light"] .left-sidebar-inner {
 	--ls-primary-background-color: #1f2428;
 	--ls-secondary-background-color: #24292e;
 	--ls-tertiary-background-color: #282e34;
@@ -89,7 +89,7 @@
 	--ls-block-bullet-border-color: rgba(246, 246, 246, 0.15);
 }
 /* Light theme */
-[data-theme="light"],
+html[data-theme="light"],
 .white-theme {
 	--ls-accent-rgb: 27, 125, 125;
 	--ls-primary-background-color: #f0f0f1;
@@ -175,15 +175,15 @@
 /* }} */
 
 /* {{ 1.4. Links & Buttons */
-[data-theme="light"] .cp__header a,
-[data-theme="light"] .extensions__pdf-toolbar > .inner > .r a,
-[data-theme="light"] a svg {
+html[data-theme="light"] .cp__header a,
+html[data-theme="light"] .extensions__pdf-toolbar > .inner > .r a,
+html[data-theme="light"] a svg {
 	color: #6d7272;
 }
-[data-theme="light"] h1 a {
+html[data-theme="light"] h1 a {
 	color: var(--ls-title-text-color);
 }
-[data-theme="light"] a:hover {
+html[data-theme="light"] a:hover {
 	background-color: var(--ls-quaternary-background-color);
 	color: var(--ls-primary-text-color);
 }
@@ -277,7 +277,7 @@ a.tag[data-ref] {
 	line-height: 0.75rem;
 	transition: 0.3s;
 }
-[data-theme="light"] a.tag[data-ref] {
+html[data-theme="light"] a.tag[data-ref] {
 	background-color: rgba(var(--ls-accent-rgb), 0.66);
 }
 a.tag[data-ref]:hover {
@@ -292,7 +292,7 @@ mark {
 	color: var(--ls-primary-background-color);
 	font-size: 14px;
 }
-[data-theme="light"] mark {
+html[data-theme="light"] mark {
 	background: rgba(0, 0, 0, 0.5);
 }
 /* fix color page-reference when mark text */
@@ -302,7 +302,7 @@ mark .page-reference .bracket {
 	font-weight: bold;
 }
 /* Search results */
-[data-theme="light"] .search-results-wrap a .rounded.border {
+html[data-theme="light"] .search-results-wrap a .rounded.border {
 	border-color: var(--ls-tertiary-background-color);
 	background-color: var(--ls-primary-background-color);
 }
@@ -339,42 +339,71 @@ mark .page-reference .bracket {
 /* {{ 2.2. Tasks */
 /* Checkboxes */
 .form-checkbox {
-	width: 0.95em;
-	height: 0.95em;
-	border: 1px solid var(--ls-secondary-text-color);
+	margin-top: 0 !important;
+	margin-right: 0.5em !important;
+	width: 0.9em;
+	height: 0.9em;
+	border: 0.1em solid var(--ls-secondary-text-color);
 	background-color: var(--ls-primary-background-color);
 	opacity: 0.75;
 }
+/* Status switcher  */
+.marker-switch {
+	position: relative;
+	display: inline-block;
+	margin: 0 0.6em 0 0;
+	padding: 0.175em 0.15em 0;
+	border-radius: 0;
+	color: var(--ls-secondary-text-color);
+	text-align: center;
+	font-weight: 500;
+	font-size: 0.8em;
+	line-height: 1;
+	opacity: 0.66;
+	cursor: pointer;
+}
+/* Status switcher - bordered variant */
+/* .form-checkbox {
+	margin-top: 0 !important;
+	margin-right: 0.5em !important;
+	width: 0.95em;
+	height: 0.95em;
+	border: 0.1em solid var(--ls-secondary-text-color);
+	background-color: var(--ls-primary-background-color);
+	opacity: 0.75;
+}
+.marker-switch {
+	position: relative;
+	top: -0.1em;
+	display: inline-block;
+	margin: 0 0.6em 0 0;
+	padding: 0.175em 0.33em 0.033em;
+	border: 0.1em solid var(--ls-border-color);
+	border-radius: 0;
+	color: var(--ls-secondary-text-color);
+	text-align: center;
+	font-weight: 500;
+	font-size: 0.7em;
+	line-height: 1;
+	opacity: 1;
+	opacity: 0.75;
+	cursor: pointer;
+} */
 .form-checkbox:hover {
 	background-color: var(--ls-secondary-background-color);
 	opacity: 0.9;
 	transform: none;
 }
-[data-theme="dark"] .form-checkbox:hover {
+html[data-theme="dark"] .form-checkbox:hover {
 	border-color: var(--ls-link-text-color);
 }
 .form-checkbox:checked {
 	border-color: var(--ls-secondary-text-color);
 	background-color: var(--ls-secondary-background-color);
 }
-/* Status Marker */
-.marker-switch {
-	display: inline-block;
-	margin-right: 0.33em;
-	height: 15px;
-	border-radius: 0;
-	color: var(--ls-secondary-text-color);
-	text-align: center;
-	font-weight: 500;
-	font-size: 0.75rem;
-	line-height: 1;
-	opacity: 1;
-	opacity: 0.75;
-	cursor: pointer;
-}
-.marker-switch:hover {
+.dark-theme .marker-switch:hover {
+	border-color: var(--ls-link-text-color);
 	color: var(--ls-link-text-color);
-	opacity: 0.9;
 }
 .canceled,
 .done {
@@ -383,10 +412,10 @@ mark .page-reference .bracket {
 .done {
 	text-decoration: none;
 }
-/* Filters? Forgot which component this is targeting. */
 .filters button:focus {
 	outline: none;
 }
+/* Status switcher  */
 /* }} */
 
 /* {{ 2.3. Code */
@@ -595,7 +624,7 @@ mark .page-reference .bracket {
 	margin-top: 1.9em;
 	padding-top: 1.9em !important;
 }
-[data-theme="dark"] #logseq-tabs_lsp_main {
+html[data-theme="dark"] #logseq-tabs_lsp_main {
 	filter: sepia(0) saturate(0.8) opacity(0.85) hue-rotate(360deg) grayscale(0.05) brightness(0.85) invert(0.04);
 	/* border-bottom: 1px solid var(--ls-quaternary-background-color); */
 }
