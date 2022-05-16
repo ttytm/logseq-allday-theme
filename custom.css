@@ -601,7 +601,7 @@ mark .page-reference .bracket {
 
 /* {{ 4.2. Table of Contents Plugin */
 [id*="logseq-tocgen--toc-slot"] {
-	padding-left: 1.5em;
+	padding-left: 0.5em;
 }
 .kef-tocgen-page span {
 	position: relative;
