@@ -584,29 +584,76 @@ mark .page-reference .bracket {
 /* <== } */
 
 /* { == 4. Plugin specific ==> */
-
-/* {{ 4.2. Tabs Plugin */
+/* {{ 4.1. Tabs Plugin */
 #main-content-container {
 	margin-top: 1.9em;
+	padding-top: 1.9em !important;
 }
-.lsp-iframe-sandbox-container {
-	width: 100% !important;
-	border-bottom: 1px solid var(--ls-quaternary-background-color);
-}
-.logseq-tab[data-active="true"] {
-	background-color: var(--ls-quaternary-background-color) !important;
+[data-theme="dark"] #logseq-tabs_lsp_main {
+	filter: sepia(0) saturate(0.8) opacity(0.85) hue-rotate(360deg) grayscale(0.05) brightness(0.85) invert(0.04);
+	/* border-bottom: 1px solid var(--ls-quaternary-background-color); */
 }
 /* }} */
 
-/* {{ 4.1. Table of Contents Plugin */
-[id^="kef-toc"][id$="tocgen"]:not([id*="backtop"]) {
-	padding: 22px 44px 22px 22px;
-	border-radius: 0.25rem;
-	background-color: var(--ls-quaternary-background-color);
-	/* margin-left: -22px; */
-	/* border: 1px solid var(--ls-secondary-background-color); */
+/* {{ 4.2. Table of Contents Plugin */
+[id*="logseq-tocgen--toc-slot"] {
+	padding-left: 1.5em;
 }
-[data-theme="light"][id^="kef-toc"][id$="tocgen"]:not([id*="backtop"]) {
-	background-color: rgba(128, 128, 128, 0.0675);
+.kef-tocgen-page span {
+	position: relative;
+	top: -0.1em;
+}
+.kef-tocgen-block-collapse {
+	border-color: var(--ls-quaternary-background-color) !important;
+}
+.kef-tocgen-page:before,
+.kef-tocgen-block:before {
+	position: relative;
+	top: 0.7em;
+	left: 0.25em;
+	display: inline-block;
+	width: 0.375em;
+	height: 0.4em;
+	border-radius: 50%;
+	background-color: var(--ls-block-bullet-color);
+	content: " ";
+	z-index: 2;
+	pointer-events: none;
+}
+[data-ref="logseq-tocgen"] .kef-tocgen-block-children {
+	margin-left: 1em;
+}
+button.kef-tocgen-arrow {
+	position: relative;
+	z-index: 1;
+	margin: 0;
+	margin-left: -1em;
+	padding: 0;
+	padding-left: 1.2em;
+}
+button.kef-tocgen-arrow svg {
+	position: relative;
+	top: 0.05em;
+	left: -0.54em;
+	width: 0.8em;
+	height: 0.8em;
+	border-radius: 50%;
+	background-color: var(--ls-block-bullet-border-color);
+	color: transparent;
+}
+.kef-tocgen-page button.kef-tocgen-arrow svg {
+	top: -0.095em;
+	left: -0.52em;
+}
+button.kef-tocgen-arrow svg[style*="transform"] {
+	left: -1.5em;
+	margin-right: 0.14em;
+	width: 0.66em;
+	height: 0.66em;
+	background-color: transparent;
+	filter: none;
+}
+button.kef-tocgen-arrow:hover svg[style*="transform"] {
+	color: var(--ls-link-text-color);
 }
 /* <== }}} */
