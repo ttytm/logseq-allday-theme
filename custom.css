@@ -65,6 +65,7 @@ html[data-theme="light"],
 html[data-theme="dark"],
 .dark-theme,
 html[data-theme="light"] .left-sidebar-inner {
+	--ls-accent-rgb: 178, 219, 219;
 	--ls-primary-background-color: #1f2428;
 	--ls-secondary-background-color: #24292e;
 	--ls-tertiary-background-color: #282e34;
@@ -77,7 +78,7 @@ html[data-theme="light"] .left-sidebar-inner {
 	--primary-text-opacity: 0.98;
 	--ls-primary-text-color: rgba(195, 200, 205, var(--primary-text-opacity));
 	--ls-secondary-text-color: rgba(195, 200, 205, 0.66);
-	--ls-link-text-color: rgba(178, 219, 219);
+	--ls-link-text-color: rgba(var(--ls-accent-rgb), var(--primary-text-opacity));
 	--ls-link-text-hover-color: rgba(244, 244, 244, var(--primary-text-opacity));
 	--ls-menu-hover-color: var(--ls-secondary-background-color);
 	--ls-slide-background-color: var(--ls-primary-background-color);
@@ -217,13 +218,17 @@ a.external-link:hover:after {
 	background-color: var(--ls-link-text-hover-color);
 }
 /* custom colors in buttons, hints etc  */
-.dark-theme .bg-indigo-600 {
-	background-color: var(--ls-link-text-color);
+.bg-indigo-600 {
 	color: var(--ls-primary-background-color);
+	transition: 0.3s;
+}
+.dark-theme .bg-indigo-600 {
+	background-color: rgba(var(--ls-accent-rgb), 0.8);
 }
 .dark-theme .hover\:bg-indigo-700:hover,
 .hover\:bg-indigo-500:hover {
-	background-color: var(--ls-primary-text-color);
+	background-color: rgb(var(--ls-accent-rgb));
+	opacity: 1;
 }
 .dark-theme button.bg-white {
 	border-color: var(--ls-block-bullet-border-color);
@@ -236,10 +241,10 @@ a.external-link:hover:after {
 }
 .white-theme .bg-indigo-600 {
 	background-color: rgba(var(--ls-accent-rgb), 0.66);
-	color: var(--ls-primary-background-color);
 }
 .white-theme .hover\:bg-indigo-700:hover {
-	background-color: rgba(var(--ls-accent-rgb), 0.66);
+	background-color: rgba(var(--ls-accent-rgb), 0.8);
+	opacity: 1;
 }
 /* pre */
 .hljs {
@@ -283,6 +288,9 @@ html[data-theme="light"] a.tag[data-ref] {
 a.tag[data-ref]:hover {
 	border-radius: 0rem 0.5rem;
 	opacity: 1;
+}
+html[data-theme="light"] a.tag[data-ref]:hover {
+	color: var(--ls-primary-background-color);
 }
 /* Highlights */
 mark {
