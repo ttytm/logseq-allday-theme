@@ -58,7 +58,7 @@ html[data-theme="light"],
 	--ls-page-inline-code-color: var(--ls-primary-text-color);
 	--ls-block-bullet-color: var(--ls-quaternary-background-color);
 	--ls-block-bullet-active-color: var(--ls-link-text-color);
-	--ls-block-bullet-threading-width: 0.1em;
+	--ls-block-bullet-threading-width: 1px;
 	--ls-bullet-closed-color: var(--ls-secondary-text-color);
 }
 /*  Dark theme & Light themes left sidebar  */
@@ -336,9 +336,6 @@ html[data-theme="light"] .search-results-wrap a .rounded.border {
 .block-children {
 	padding: 0.16em 0;
 }
-.ls-block div.items-center {
-	height: 24px !important;
-}
 #lazy-blocks > div .ls-block[haschild="true"] > div > .block-content-wrapper::before {
 	top: 0.9rem;
 }
@@ -514,11 +511,8 @@ html[data-theme="dark"] .form-checkbox:hover {
 /* <== }}} */
 
 /* { == 3. Bullet Threading ==> */
-.block-control,
-.block-control:hover {
-	min-width: 0;
-	/* Some bug going on here to make the left border highlight cross device compatible. Assigning this "wired" width seems to solve it */
-	width: 1.551em;
+.block-control {
+	width: 1.55em;
 }
 .block-children {
 	border-color: var(--ls-quaternary-background-color);
@@ -562,7 +556,7 @@ html[data-theme="dark"] .form-checkbox:hover {
 	top: calc(-100% + var(--ls-block-bullet-threading-width) * 0.5 - 0.1em);
 	right: 6px;
 	bottom: 50%;
-	left: calc(var(--ls-block-bullet-threading-width) * -1);
+	left: calc(-0.5 * var(--ls-block-bullet-threading-width));
 	border-bottom: var(--ls-block-bullet-threading-width) solid transparent;
 	border-left: var(--ls-block-bullet-threading-width) solid transparent;
 	border-bottom-left-radius: 6px;
@@ -576,7 +570,7 @@ html[data-theme="dark"] .form-checkbox:hover {
 	position: absolute;
 	top: -1.19em;
 	bottom: 0;
-	left: calc(var(--ls-block-bullet-threading-width) * -1);
+	left: calc(-0.5 * var(--ls-block-bullet-threading-width));
 	border-left: var(--ls-block-bullet-threading-width) solid transparent;
 	content: "";
 	pointer-events: none;
@@ -591,7 +585,7 @@ html[data-theme="dark"] .form-checkbox:hover {
 	position: absolute;
 	top: 0.9em;
 	bottom: 0;
-	left: -15px;
+	left: -1em;
 	border-left: var(--ls-block-bullet-threading-width) solid transparent;
 	content: "";
 	pointer-events: none;
@@ -610,7 +604,8 @@ html[data-theme="dark"] .form-checkbox:hover {
 }
 /* disable first fracking level for embedded content */
 .embed > div > div > div > div > div > div::before,
-.embed-block > div > div > div > div > div > div > div::before {
+.embed-block > div > div > div > div > div > div > div::before,
+.custom-query .blocks-container > div> div > .ls-block > div > .items-center::before {
 	border-color: transparent !important;
 }
 /* algin embeded pages to content width */
@@ -699,3 +694,4 @@ button.kef-tocgen-arrow:hover svg[style*="transform"] {
 	color: var(--ls-link-text-color);
 }
 /* <== }}} */
+
