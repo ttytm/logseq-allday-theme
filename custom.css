@@ -64,7 +64,8 @@ html[data-theme="light"],
 /*  Dark theme & Light themes left sidebar  */
 html[data-theme="dark"],
 .dark-theme,
-html[data-theme="light"] .left-sidebar-inner {
+html[data-theme="light"] .left-sidebar-inner,
+html[data-theme="light"] .ls-left-sidebar-open .cp__header > .l {
 	--ls-accent-rgb: 178, 219, 219;
 	--ls-primary-background-color: #1f2428;
 	--ls-secondary-background-color: #24292e;
@@ -92,7 +93,7 @@ html[data-theme="light"] .left-sidebar-inner {
 /* Light theme */
 html[data-theme="light"],
 .white-theme {
-	--ls-accent-rgb: 27, 125, 125;
+	--ls-accent-rgb: 30, 125, 124;
 	--ls-primary-background-color: #f0f0f1;
 	--ls-secondary-background-color: #e8e9ea;
 	--ls-tertiary-background-color: rgba(225, 225, 225, 0.9);
@@ -177,9 +178,16 @@ html[data-theme="light"],
 
 /* {{ 1.4. Links & Buttons */
 html[data-theme="light"] .cp__header a,
+html[data-theme="light"] .cp__header button,
 html[data-theme="light"] .extensions__pdf-toolbar > .inner > .r a,
 html[data-theme="light"] a svg {
 	color: #6d7272;
+}
+.cp__header .add-graph-btn {
+	border: none;
+}
+.cp__header .add-graph-btn span {
+	margin-top: 0 !important;
 }
 html[data-theme="light"] h1 a {
 	color: var(--ls-title-text-color);
@@ -608,7 +616,7 @@ html[data-theme="dark"] .form-checkbox:hover {
 /* disable first fracking level for embedded content */
 .embed > div > div > div > div > div > div::before,
 .embed-block > div > div > div > div > div > div > div::before,
-.custom-query .blocks-container > div> div > .ls-block > div > .items-center::before {
+.custom-query .blocks-container > div > div > .ls-block > div > .items-center::before {
 	border-color: transparent !important;
 }
 /* algin embeded pages to content width */
@@ -697,4 +705,3 @@ button.kef-tocgen-arrow:hover svg[style*="transform"] {
 	color: var(--ls-link-text-color);
 }
 /* <== }}} */
-
