@@ -16,10 +16,7 @@ Switching between dark / light mode is possible under `Settings → General → 
 The theme's implemented bullet threading may be impaired when using the additional
 _Bullet Threading_ plugin on top of it. If you have installed the plugin, I'll recommend turning it off while using the theme.
 
-To ensure the best functionality, please consider upgrading to Logseq v0.5.9+.
-Due to changes in the recent versions, the theme's styling for some elements needed to be adapted to work with the new release and can look displaced in older versions now.
-
-If you are upgrading from an old version of the All Day theme, clearing the cache can help if you are still experiencing issues like displacement of lines after an update `Settings → Advanced → Clear cache`. Note: After clearing the cache you need to reopen your graphs.
+> **INFO:** New versions often Logseq might introduce changes that require adaptation of styles. If you experience an issue, we might have missed out on implementing it for a new version. Please feel free to open an issue and help to keep the theme even better up to date ❤️.
 
 ## Credits
 
