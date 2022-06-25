@@ -247,7 +247,7 @@ a.external-link:hover:after {
 	opacity: 1;
 }
 .left-sidebar-inner .page-icon {
-	color: #8ec2c2
+	color: var(--ls-active-primary-color);
 }
 /* pre */
 .hljs {
