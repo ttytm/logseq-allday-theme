@@ -246,6 +246,9 @@ a.external-link:hover:after {
 	background-color: rgba(var(--ls-accent-rgb), 0.8);
 	opacity: 1;
 }
+.left-sidebar-inner .page-icon {
+	color: var(--ls-active-primary-color);
+}
 /* pre */
 .hljs {
 	background: transparent;
