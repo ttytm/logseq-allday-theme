@@ -597,12 +597,12 @@ html[data-theme="dark"] .form-checkbox:hover {
 	position: absolute;
 	top: 0.9em;
 	bottom: 0;
-	left: -0.9em;
+	left: -1em;
 	border-left: var(--ls-block-bullet-threading-width) solid transparent;
 	content: "";
 	pointer-events: none;
 }
-.ls-block[haschild]:focus-within > div > .block-content-wrapper::before {
+.ls-block[haschild]:focus-within > div > .block-content-wrapper .block-content::before {
 	border-color: var(--ls-block-bullet-active-color);
 }
 /* disable first fracking level for embedded content */
@@ -697,3 +697,4 @@ button.kef-tocgen-arrow:hover svg[style*="transform"] {
 	color: var(--ls-link-text-color);
 }
 /* <== }}} */
+/* Table of Content
