@@ -474,6 +474,9 @@ html[data-theme="dark"] .form-checkbox:hover {
 .cm-s-solarized.cm-s-dark .CodeMirror-gutters {
 	background-color: rgba(40, 42, 51, 0.5);
 }
+html[data-theme="light"] .cm-s-solarized.cm-s-dark .CodeMirror-gutters {
+	background-color: rgba(40, 42, 51, 0.1);
+}
 .cm-s-solarized.cm-s-light .CodeMirror-gutters {
 	background-color: rgba(40, 42, 51, 0.033);
 }
@@ -697,4 +700,4 @@ button.kef-tocgen-arrow:hover svg[style*="transform"] {
 	color: var(--ls-link-text-color);
 }
 /* <== }}} */
-/* Table of Content
+
