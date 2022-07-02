@@ -347,7 +347,7 @@ html[data-theme="light"] .search-results-wrap a .rounded.border {
 .block-children {
 	padding: 0.16em 0;
 }
-#lazy-blocks > div .ls-block[haschild="true"] > div > .block-content-wrapper::before {
+#lazy-blocks > div .ls-block[haschild] > div > .block-content-wrapper::before {
 	top: 0.9rem;
 }
 /* }} */
@@ -523,6 +523,7 @@ html[data-theme="dark"] .form-checkbox:hover {
 
 /* { == 3. Bullet Threading ==> */
 .block-control {
+	min-width: 0;
 	width: 1.55em;
 }
 .block-children {
@@ -592,25 +593,16 @@ html[data-theme="dark"] .form-checkbox:hover {
 .ls-block .block-children:focus-within > .ls-block:focus-within ~ .ls-block::before {
 	border-color: transparent;
 }
-.ls-block[haschild="true"] > div > .block-content-wrapper::before {
+.ls-block[haschild] > div > .block-content-wrapper::before {
 	position: absolute;
 	top: 0.9em;
 	bottom: 0;
-	left: -1em;
+	left: -0.9em;
 	border-left: var(--ls-block-bullet-threading-width) solid transparent;
 	content: "";
 	pointer-events: none;
 }
-.ls-block[haschild="true"] > div > .block-content-wrapper .block-content.inline::before {
-	position: absolute;
-	top: 0.9em;
-	bottom: 0;
-	left: -15px;
-	border-left: var(--ls-block-bullet-threading-width) solid transparent;
-	content: "";
-	pointer-events: none;
-}
-.ls-block[haschild="true"]:focus-within > div > .block-content-wrapper .block-content::before {
+.ls-block[haschild]:focus-within > div > .block-content-wrapper::before {
 	border-color: var(--ls-block-bullet-active-color);
 }
 /* disable first fracking level for embedded content */
