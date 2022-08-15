@@ -519,6 +519,19 @@ html[data-theme="light"] .cm-s-solarized.cm-s-dark .CodeMirror-gutters {
 	background-color: var(--ls-primary-background-color);
 	opacity: 0.125;
 }
+#pdf-layout-container[data-theme="dark"] .extensions__pdf-toolbar,
+#pdf-layout-container[data-theme="light"] .extensions__pdf-toolbar {
+	right: 0;
+	width: 100%;
+}
+#pdf-layout-container[data-theme="dark"] .extensions__pdf-toolbar .inner,
+#pdf-layout-container[data-theme="light"] .extensions__pdf-toolbar .inner {
+	margin-right: 1em;
+}
+#pdf-layout-container[data-theme="dark"] .extensions__pdf-toolbar .inner .buttons,
+#pdf-layout-container[data-theme="light"] .extensions__pdf-toolbar .inner .buttons {
+	border-radius: 0.25rem;
+}
 #pdf-layout-container[data-theme="dark"] .extensions__pdf-toolbar {
 	background: linear-gradient(0deg, rgba(246, 246, 246, 0) 10%, var(--ls-secondary-background-color) 100%);
 }
@@ -703,3 +716,4 @@ button.kef-tocgen-arrow:hover svg[style*="transform"] {
 	color: var(--ls-link-text-color);
 }
 /* <== }}} */
+
