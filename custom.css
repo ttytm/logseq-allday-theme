@@ -10,7 +10,6 @@
   2.2. Tasks
   2.3. Code
   2.4. PDF Viewer
-  2.5. Queries
 3. Bullet threading
 4. Plugin specific
   4.1. Tabs
@@ -539,16 +538,10 @@ html[data-theme="light"] .cm-s-solarized.cm-s-dark .CodeMirror-gutters {
 #pdf-layout-container[data-theme="light"] .extensions__pdf-toolbar {
 	background: linear-gradient(0deg, rgba(246, 246, 246, 0) 10%, rgb(31, 36, 40, 0.3) 100%);
 }
-/* }} */
-
-/* {{ 2.5. Queries */
-.dsl-query a.block-control {
-	min-width: 22px;
-}
 /* <== }}} */
 
 /* { == 3. Bullet Threading ==> */
-.block-control {
+:not(:dsl-query) .block-control {
 	min-width: 0;
 	width: 1.55em;
 }
