@@ -118,7 +118,8 @@ html[data-theme="light"],
 	margin-top: 1.9em;
 	padding-top: 1.9em !important;
 }
-/* Add some white space to the right, s, subtracting the bullets and spacing, the real start of the content on the left is offset. */
+/* Add some white space to the right. 
+(This is because the actual start of the content on the left side is offset if we include the bullets and spacing.) */
 .cp__sidebar-main-content {
 	margin-right: 24px;
 }
@@ -189,6 +190,9 @@ html[data-theme="light"] a svg {
 .cp__header .add-graph-btn span {
 	margin-top: 0 !important;
 }
+html[data-theme="light"] .cp__sidebar-left-layout a {
+	color: var(--ls-secondary-text-color);
+}
 html[data-theme="light"] h1 a {
 	color: var(--ls-title-text-color);
 }
@@ -253,9 +257,6 @@ a.external-link:hover:after {
 .white-theme .hover\:bg-indigo-700:hover {
 	background-color: rgba(var(--ls-accent-rgb), 0.8);
 	opacity: 1;
-}
-.left-sidebar-inner .page-icon {
-	color: var(--ls-active-primary-color);
 }
 /* pre */
 .hljs {
@@ -716,4 +717,3 @@ button.kef-tocgen-arrow:hover svg[style*="transform"] {
 	color: var(--ls-link-text-color);
 }
 /* <== }}} */
-
