@@ -118,7 +118,7 @@ html[data-theme="light"],
 	margin-top: 1.9em;
 	padding-top: 1.9em !important;
 }
-/* Add some white space to the right. 
+/* Add some white space to the right.
 (This is because the actual start of the content on the left side is offset if we include the bullets and spacing.) */
 .cp__sidebar-main-content {
 	margin-right: 24px;
@@ -204,7 +204,7 @@ html[data-theme="light"] a:hover {
 a.external-link {
 	border-bottom: 1px dashed;
 }
-a.external-link:after {
+a.external-link::after {
 	position: relative;
 	bottom: -2px;
 	left: -1px;
@@ -226,7 +226,7 @@ a.external-link:after {
 	-webkit-mask-box-size: 14px 14px;
 	object-fit: cover;
 }
-a.external-link:hover:after {
+a.external-link:hover::after {
 	background-color: var(--ls-link-text-hover-color);
 }
 /* custom colors in buttons, hints etc  */
@@ -665,8 +665,8 @@ html[data-theme="dark"] #logseq-tabs_lsp_main {
 .kef-tocgen-block-collapse {
 	border-color: var(--ls-quaternary-background-color) !important;
 }
-.kef-tocgen-page:before,
-.kef-tocgen-block:before {
+.kef-tocgen-page::before,
+.kef-tocgen-block::before {
 	position: relative;
 	top: 0.7em;
 	left: 0.5em;
