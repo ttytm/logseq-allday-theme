@@ -1,0 +1,8 @@
+rules:
+  comment-whitespace-inside: "always"
+  indentation: "tab"
+  max-line-length: 120
+  no-eol-whitespace: true
+  number-max-precision: 4
+  property-no-vendor-prefix: true
+  selector-pseudo-element-colon-notation: "double"
