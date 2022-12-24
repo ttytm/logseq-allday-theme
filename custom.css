@@ -512,7 +512,7 @@ html[data-theme="light"] .cm-s-solarized.cm-s-dark .CodeMirror-gutters {
 	background-color: var(--ls-quaternary-background-color);
 }
 #pdf-layout-container[data-theme="dark"] .textLayer {
-	background-color: var(--ls-tertiary-background-color);
+	background-color: #282e34;
 }
 #pdf-layout-container[data-theme="light"] .textLayer {
 	background-color: var(--ls-primary-background-color);
