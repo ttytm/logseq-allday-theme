@@ -379,6 +379,20 @@ html[data-theme="light"] .search-results-wrap a .rounded.border {
 	opacity: 0.66;
 	cursor: pointer;
 }
+.form-checkbox:hover {
+	background-color: var(--ls-secondary-background-color);
+	border-color: var(--ls-link-text-color);
+	opacity: 0.9;
+	transform: none;
+}
+.form-checkbox:checked {
+	border-color: var(--ls-secondary-text-color);
+	background-color: var(--ls-secondary-background-color);
+}
+html[data-theme="light"] .form-checkbox:checked {
+	background-color: var(--ls-active-primary-color);
+}
+/* Status switcher  */
 /* Status switcher - bordered variant */
 /* .form-checkbox {
 	margin-top: 0 !important;
@@ -406,18 +420,6 @@ html[data-theme="light"] .search-results-wrap a .rounded.border {
 	opacity: 0.75;
 	cursor: pointer;
 } */
-.form-checkbox:hover {
-	background-color: var(--ls-secondary-background-color);
-	opacity: 0.9;
-	transform: none;
-}
-html[data-theme="dark"] .form-checkbox:hover {
-	border-color: var(--ls-link-text-color);
-}
-.form-checkbox:checked {
-	border-color: var(--ls-secondary-text-color);
-	background-color: var(--ls-secondary-background-color);
-}
 .dark-theme .marker-switch:hover {
 	border-color: var(--ls-link-text-color);
 	color: var(--ls-link-text-color);
@@ -429,10 +431,6 @@ html[data-theme="dark"] .form-checkbox:hover {
 .done {
 	text-decoration: none;
 }
-.filters button:focus {
-	outline: none;
-}
-/* Status switcher  */
 /* }} */
 
 /* {{ 2.3. Code */
