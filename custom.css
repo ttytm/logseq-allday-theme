@@ -584,7 +584,7 @@ html[data-theme="light"] .cm-s-solarized.cm-s-dark .CodeMirror-gutters {
 .ls-block .ls-block > div > div.items-center::before {
 	position: absolute;
 	top: calc(-100% + var(--ls-block-bullet-threading-width) * 0.5 - 0.1em);
-	right: 6px;
+	right: 10px;
 	bottom: 50%;
 	left: calc(-0.5 * var(--ls-block-bullet-threading-width));
 	border-bottom: var(--ls-block-bullet-threading-width) solid transparent;
