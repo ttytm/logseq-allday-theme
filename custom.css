@@ -45,7 +45,6 @@ html[data-theme="light"],
 	--ls-page-properties-background-color: var(--ls-secondary-background-color);
 	--ls-block-properties-background-color: var(--ls-secondary-background-color);
 	--ls-block-ref-link-text-color: var(--ls-link-text-color);
-	--ls-a-chosen-bg: var(--ls-secondary-background-color);
 	--ls-page-blockquote-color: var(--ls-primary-text-color);
 	--ls-page-blockquote-bg-color: var(--ls-secondary-background-color);
 	--ls-page-blockquote-border-color: var(--ls-border-color);
@@ -81,7 +80,6 @@ html[data-theme="light"] .ls-left-sidebar-open .cp__header > .l {
 	--ls-secondary-text-color: rgba(195, 200, 205, 0.66);
 	--ls-link-text-color: rgba(var(--ls-accent-rgb), var(--primary-text-opacity));
 	--ls-link-text-hover-color: rgba(244, 244, 244, var(--primary-text-opacity));
-	--ls-menu-hover-color: var(--ls-secondary-background-color);
 	--ls-slide-background-color: var(--ls-primary-background-color);
 	--ls-block-highlight-color: rgba(246, 246, 246, 0.1);
 	--ls-page-inline-code-bg-color: rgba(246, 246, 246, 0.2);
