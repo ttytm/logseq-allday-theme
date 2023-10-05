@@ -560,6 +560,9 @@ html[data-theme="light"] .cm-s-solarized.cm-s-dark .CodeMirror-gutters {
 	transform: translate(1px, -1px);
 	/* align-items: end; */
 }
+.bullet-link-wrap {
+ border-radius:20px; 
+}
 /* Block bullet path in nested block only */
 .ls-block .bullet {
 	background-color: var(--ls-block-bullet-active-color);
